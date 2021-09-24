@@ -1,0 +1,18 @@
+.container {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 600px;
+}
+
+.container-corona {
+  background-color: #453a33;
+  height: 500px;
+}
+
+.container-corona p {
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

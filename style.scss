@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import "reset";
 
 $breakpoint-up: (
     'sm': 'screen and (min-width: 540px)',
@@ -31,13 +32,12 @@ $breakpoint-down: (
 html{   
     margin: 0;
 	padding: 0;
-    width: fit-content;
     font-family: ArialMT, "メイリオ", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
+    width: fit-content;
 }
 
-.container{
-    display: block;
-    width: 100%;
+.header{
+    display: flex;
 }
 
 .corona{
@@ -70,4 +70,62 @@ html{
     display: inline-block;
     text-align: center;
     font-size: 40px;
+}
+
+.eyecatch{
+    background-image: url(background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    &-smallthings{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    &-price{
+        // padding-top: 100px;
+        // border-radius: 50px 50px 0 0 / 10px 10px 0 0;
+        // background: rgb(61,177,186);
+        // background: linear-gradient(61deg, rgba(61,177,186,1) 0%, rgba(255,255,255,1) 35%, rgba(61,177,186,1) 100%);
+    }
+    &-woman{
+        text-align: right;
+    }
+   
+    
+}
+
+.trouble{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(trouble-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    &-title{
+        font-size: 9em;
+        font-family: serif;
+        transform: rotate(-4deg);
+        text-align: center;
+    }
+    &-naiyou{
+        font-size: 1.8em;
+        color: white;
+        font-family: serif;
+    }
+}
+
+.reason{
+    &-title{
+        display: block;
+        text-align: center;
+    }
+    &-one,&-two,&-three{
+        font-size: 5em;
+        font-family: serif;
+
+    }
+    &-reason1info,&-reason2info,&-reason3info{
+        font-size: 2.2em;
+        width: 100%;
+    }
 }

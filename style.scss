@@ -6,59 +6,67 @@ $breakpoint-up: (
     'md': 'screen and (min-width: 768px)',
     'lg': 'screen and (min-width: 1024px)',
     'xl': 'screen and (min-width: 1200px)',
-) !default;
-
-// max-width
-$breakpoint-down: (
-    'sm': 'screen and (max-width: 539px)',
-    'md': 'screen and (max-width: 767px)',
-    'lg': 'screen and (max-width: 1023px)',
-    'xl': 'screen and (max-width: 1199px)',
-) !default;
-
-// @mixinの定義
-@mixin mq-up($breakpoint: md) {
-    @media #{map-get($breakpoint-up, $breakpoint)} {
-        @content;
-    }
-}
-
-@mixin mq-down($breakpoint: md) {
-    @media #{map-get($breakpoint-down, $breakpoint)} {
-        @content;
-    }
-}
-
-html{   
-    margin: 0;
-	padding: 0;
-    font-family: ArialMT, "メイリオ", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
-    width: fit-content;
-}
-
-.header{
-    display: flex;
-}
-
-.corona{
-    background-color: #453a33;
-        &-title{    
-            color: white;
-            padding: 10px;
-            text-align: center;
-            font-size: 40px;
-            font-weight: bold;
-            padding: 1em;
+    ) !default;
+    
+    // max-width
+    $breakpoint-down: (
+        'sm': 'screen and (max-width: 539px)',
+        'md': 'screen and (max-width: 767px)',
+        'lg': 'screen and (max-width: 1023px)',
+        'xl': 'screen and (max-width: 1199px)',
+        ) !default;
+        
+        // @mixinの定義
+        @mixin mq-up($breakpoint: md) {
+            @media #{map-get($breakpoint-up, $breakpoint)} {
+                @content;
+            }
         }
-        &-sub{
-            font-size: 30px;
-            text-align: center;
-            color: white;
-            padding: 1em;
+        
+        @mixin mq-down($breakpoint: md) {
+            @media #{map-get($breakpoint-down, $breakpoint)} {
+                @content;
+            }
         }
-}
-
-.threereason{
+        
+        html{   
+            margin: 0;
+            padding: 0;
+            font-family: ArialMT, "メイリオ", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
+            width: 100%;
+        }
+        
+        img{
+            max-width: 100%;
+        }
+        
+        .header{
+            display: flex;
+        }
+        
+        .corona{
+            background-color: #453a33;
+            &-title{    
+                color: white;
+                padding: 10px;
+                text-align: center;
+                font-size: 18px;
+                font-weight: bold;
+                padding: 1em;
+            }
+            &-sub{
+                font-size: 15px;
+                text-align: center;
+                color: white;
+                padding: 1em;
+            }
+            &-picture{
+                width: 300px;
+                padding: 14px;
+            }
+        }
+        
+        .threereason{
     display: inline-block;
     text-align: center;
     p{
@@ -66,32 +74,53 @@ html{
     }
 }
 
-.course{
-    display: inline-block;
-    text-align: center;
-    font-size: 40px;
-}
 
 .eyecatch{
     background-image: url(background.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    &-smallthings{
-        display: flex;
-        flex-wrap: wrap;
+    &-subtitle{
+        padding: 13px;
+        width: 310px;
+        position: relative;
+        z-index: 10;
     }
-    
+    &-title{
+        margin-top: -152px;
+        position: relative;
+        z-index: 10;
+    }
+    &-info{
+        width: 235px;
+        position: relative;
+        z-index: 9;
+        margin: -14 0 0 auto;
+    }
     &-price{
-        // padding-top: 100px;
-        // border-radius: 50px 50px 0 0 / 10px 10px 0 0;
-        // background: rgb(61,177,186);
-        // background: linear-gradient(61deg, rgba(61,177,186,1) 0%, rgba(255,255,255,1) 35%, rgba(61,177,186,1) 100%);
+        padding-top: 58px;
+        border-radius: 10em 10em 0 0/6em 6em 0 0;
+        background: #3db1ba;
+        background: linear-gradient(61deg, #3db1ba 0%, white 35%, #3db1ba 100%);
+        position: relative;
+        z-index: 7;
+        margin-top: -70px;
+    }
+    &-contact{
+        width: 350px;
+        display: flex;
+        text-align: center;
+
     }
     &-woman{
-        text-align: right;
+        margin-top: -250px;
+        position: relative;
+        z-index: 1;
     }
-   
+    &-shoureijisseki{
+        width: 150px;
+    }
+    
     
 }
 
@@ -101,31 +130,51 @@ html{
     background-image: url(trouble-background.png);
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
     &-title{
-        font-size: 9em;
+        font-size: 53px;
         font-family: serif;
         transform: rotate(-4deg);
         text-align: center;
+        font-weight: bold;
     }
     &-naiyou{
-        font-size: 1.8em;
+        font-size: 1em;
         color: white;
         font-family: serif;
+    }
+    &-woman{
+        width: 11em;
     }
 }
 
 .reason{
     &-title{
-        display: block;
         text-align: center;
     }
     &-one,&-two,&-three{
-        font-size: 5em;
+        font-size: 2em;
         font-family: serif;
-
+        font-weight: bold;
+        
     }
     &-reason1info,&-reason2info,&-reason3info{
-        font-size: 2.2em;
+        font-size: 14px;
         width: 100%;
+    }
+}
+
+.course{
+    display: inline-block;
+    text-align: center;
+    font-size: 40px;
+    &-title{
+        font-size: 28px;
+    }
+    &-title2{
+        font-size: 28px;
+    }
+    &-1,&-2,&-3{
+        font-size: 14px;
     }
 }

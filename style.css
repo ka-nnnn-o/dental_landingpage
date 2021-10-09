@@ -503,7 +503,7 @@ img {
 
 .eyecatch-content {
   font-family: serif;
-  text-shadow: 3px 3px 3px #306e73;
+  text-shadow: 0 0 6px rgba(48, 110, 115, 0.5), 0 0 6px rgba(48, 110, 115, 0.5), 0 0 6px rgba(48, 110, 115, 0.5), 0 0 6px rgba(48, 110, 115, 0.5), 0 0 6px rgba(48, 110, 115, 0.5);
   color: white;
   font-weight: bold;
   line-height: 1;
@@ -562,7 +562,7 @@ img {
   background-image: url(trouble-background.png);
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
+  position: relative;
 }
 
 .trouble-title {
@@ -598,59 +598,30 @@ img {
 }
 
 .arrow {
-  position: relative;
-  display: inline-block;
-  padding-left: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  width: 30px;
+  height: 30px;
+  border-right: solid 2px #5bc0de;
+  border-bottom: solid 2px #5bc0de;
+  position: absolute;
+  bottom: -1.5rem;
+  left: calc(50% - 15px);
+  z-index: 1;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .arrow::after {
   content: '';
+  display: block;
   width: 30px;
   height: 30px;
-  border: 0px;
-  border-top: solid 2px #5bc0de;
   border-right: solid 2px #5bc0de;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(135deg);
-  position: absolute;
-  top: 50%;
-  left: 180.5px;
-  margin-top: -4px;
-}
-
-.arrow2 {
+  border-bottom: solid 2px #5bc0de;
   position: relative;
-  display: inline-block;
-  padding-left: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.arrow2::after {
-  content: '';
-  width: 30px;
-  height: 30px;
-  border: 0px;
-  border-top: solid 2px #5bc0de;
-  border-right: solid 2px #5bc0de;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(135deg);
-  position: absolute;
-  top: 60%;
-  left: 180.5px;
-  margin-top: 15px;
+  -webkit-transform: translate(-10px, -10px);
+          transform: translate(-10px, -10px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .reason {

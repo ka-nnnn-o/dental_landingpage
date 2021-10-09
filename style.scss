@@ -124,7 +124,11 @@ img{
     }
     &-content{
         font-family: serif;
-        text-shadow: 3px 3px 3px #306e73;
+        text-shadow: 0 0 6px rgba(#306e73,.5),
+            0 0 6px rgba(#306e73,.5),
+            0 0 6px rgba(#306e73,.5),
+            0 0 6px rgba(#306e73,.5),
+            0 0 6px rgba(#306e73,.5);
         color: white;
         font-weight: bold;
         line-height: 1;
@@ -175,7 +179,7 @@ img{
     background-image: url(trouble-background.png);
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    position: relative;
     &-title{
         font-size: 53px;
         font-family: serif;
@@ -205,51 +209,50 @@ img{
     }
 }
 .arrow{
-    position: relative;
-    display: inline-block;
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-
+    width: 30px;
+    height: 30px;
+    border-right: solid 2px #5bc0de;
+    border-bottom: solid 2px #5bc0de;
+    position: absolute;
+    bottom: -1.5rem;
+    left: calc(50% - 15px);
+    z-index: 1;
+    transform: rotate(45deg);
     &::after{
         content: '';
+        display: block;
         width: 30px;
         height: 30px;
-        border: 0px;
-        border-top: solid 2px #5bc0de;
         border-right: solid 2px #5bc0de;
-        -ms-transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-        transform: rotate(135deg);
-        position: absolute;
-        top: 50%;
-        left: 180.5px;
-        margin-top: -4px;
+        border-bottom: solid 2px #5bc0de;
+        position: relative;
+        transform: translate(-10px,-10px);
+        box-sizing: border-box;
     }
 }
-.arrow2{
-    position: relative;
-    display: inline-block;
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
+// .arrow2{
+//     position: relative;
+//     display: inline-block;
+//     padding-left: 20px;
+//     display: flex;
+//     flex-direction: column;
 
-    &::after{
-        content: '';
-        width: 30px;
-        height: 30px;
-        border: 0px;
-        border-top: solid 2px #5bc0de;
-        border-right: solid 2px #5bc0de;
-        -ms-transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-        transform: rotate(135deg);
-        position: absolute;
-        top: 60%;
-        left: 180.5px;
-        margin-top: 15px;
-    }
-}
+//     &::after{
+//         content: '';
+//         width: 30px;
+//         height: 30px;
+//         border: 0px;
+//         border-top: solid 2px #5bc0de;
+//         border-right: solid 2px #5bc0de;
+//         -ms-transform: rotate(45deg);
+//         -webkit-transform: rotate(45deg);
+//         transform: rotate(135deg);
+//         position: absolute;
+//         top: 60%;
+//         left: 180.5px;
+//         margin-top: 15px;
+//     }
+// }
 
 .reason{
     background-color: #FCF2F5;

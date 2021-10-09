@@ -419,27 +419,25 @@ img {
 
 .corona {
   background-color: #453a33;
+  text-align: center;
+  padding: 1em;
 }
 
 .corona-title {
   color: white;
   padding: 10px;
-  text-align: center;
   font-size: 18px;
   font-weight: bold;
-  padding: 1em;
 }
 
 .corona-sub {
   font-size: 15px;
-  text-align: center;
   color: white;
-  padding: 1em;
 }
 
 .corona-picture {
   width: 300px;
-  padding: 14px;
+  padding-top: 10px;
 }
 
 .threereason {
@@ -456,6 +454,21 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  padding-bottom: 90px;
+}
+
+.eyecatch::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(toppage-woman.png);
+  background-size: contain;
+  background-position: bottom right;
+  background-repeat: no-repeat;
 }
 
 .eyecatch-subtitle {
@@ -466,9 +479,9 @@ img {
 }
 
 .eyecatch-title {
-  margin-top: -152px;
   position: relative;
   z-index: 10;
+  margin-top: -35px;
 }
 
 .eyecatch-info {
@@ -478,32 +491,66 @@ img {
   margin: -14 0 0 auto;
 }
 
-.eyecatch-price {
-  padding-top: 58px;
+.eyecatch-bg {
+  margin-top: -90px;
   border-radius: 10em 10em 0 0/6em 6em 0 0;
-  background: #3db1ba;
-  background: linear-gradient(61deg, #3db1ba 0%, white 35%, #3db1ba 100%);
-  position: relative;
-  z-index: 7;
-  margin-top: -70px;
-}
-
-.eyecatch-contact {
-  width: 350px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: center;
-}
-
-.eyecatch-woman {
-  margin-top: -250px;
+  background: #3e858b;
+  background: -webkit-gradient(linear, left bottom, left top, from(#3e858b), color-stop(18%, #90f8ff), color-stop(40%, #24929a), color-stop(59%, #61e7f0), color-stop(82%, #8bc9ce), color-stop(92%, rgba(136, 195, 200, 0.276348)), to(rgba(136, 195, 200, 0)));
+  background: linear-gradient(0deg, #3e858b 0%, #90f8ff 18%, #24929a 40%, #61e7f0 59%, #8bc9ce 82%, rgba(136, 195, 200, 0.276348) 92%, rgba(136, 195, 200, 0) 100%);
   position: relative;
   z-index: 1;
 }
 
+.eyecatch-content {
+  font-family: serif;
+  text-shadow: 3px 3px 3px #306e73;
+  color: white;
+  font-weight: bold;
+  line-height: 1;
+  padding: 10px;
+  margin-top: -18px;
+}
+
+.eyecatch-content-costname {
+  font-size: 32px;
+}
+
+.eyecatch-content .cost {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.eyecatch-content .cost-name {
+  font-size: 81px;
+}
+
+.eyecatch-content .cost-side {
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  font-size: 23px;
+}
+
 .eyecatch-shoureijisseki {
   width: 150px;
+}
+
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+.contact-1 {
+  width: 180px;
+}
+
+.contact-2 {
+  width: 180px;
 }
 
 .trouble {
@@ -528,17 +575,106 @@ img {
 }
 
 .trouble-naiyou {
-  font-size: 1em;
+  font-size: 18px;
   color: white;
   font-family: serif;
+  line-height: 2;
+  margin: 10px 0 0 15px;
+  position: relative;
+  z-index: 2;
 }
 
 .trouble-woman {
-  width: 11em;
+  width: 14em;
+  margin: -14em 0 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.trouble-last {
+  margin-top: -5em;
+  position: relative;
+  z-index: 3;
+}
+
+.arrow {
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.arrow::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border: 0px;
+  border-top: solid 2px #5bc0de;
+  border-right: solid 2px #5bc0de;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(135deg);
+  position: absolute;
+  top: 50%;
+  left: 180.5px;
+  margin-top: -4px;
+}
+
+.arrow2 {
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.arrow2::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border: 0px;
+  border-top: solid 2px #5bc0de;
+  border-right: solid 2px #5bc0de;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(135deg);
+  position: absolute;
+  top: 60%;
+  left: 180.5px;
+  margin-top: 15px;
+}
+
+.reason {
+  background-color: #FCF2F5;
+  border-radius: 3em;
+  padding: 13px;
+  margin: 40px 0 15px;
+  padding-bottom: 28px;
 }
 
 .reason-title {
-  text-align: center;
+  margin: 17px 10px;
+}
+
+.reason-number {
+  font-size: 5em;
+  font-family: serif;
+  color: #D92D68;
+}
+
+.reason-1, .reason-2, .reason-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .reason-one, .reason-two, .reason-three {
@@ -550,23 +686,163 @@ img {
 .reason-reason1info, .reason-reason2info, .reason-reason3info {
   font-size: 14px;
   width: 100%;
+  padding: 12px 0 20px;
+  line-height: 2;
+}
+
+.jisseki {
+  background-image: url(dentalphoto.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-align: center;
+}
+
+.jisseki-round {
+  padding: 20px;
+  text-align: center;
 }
 
 .course {
   display: inline-block;
   text-align: center;
-  font-size: 40px;
 }
 
 .course-title {
-  font-size: 28px;
+  background-image: url(dental-logo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding: 36px 0 30px;
 }
 
-.course-title2 {
-  font-size: 28px;
+.course-name {
+  font-size: 1.5em;
+  background-color: white;
+  margin-top: -10px;
 }
 
-.course-1, .course-2, .course-3 {
-  font-size: 14px;
+.course .course1, .course .course2, .course .course3 {
+  background-color: #E7F4F0;
+  margin: 10px 0 10px;
+}
+
+.course .title1 {
+  font-size: 26px;
+}
+
+.course .title2 {
+  font-size: 49px;
+}
+
+.info {
+  text-align: center;
+  padding: 1em;
+}
+
+.info-title {
+  font-size: 26px;
+  background-image: url(dentalphoto2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2.9em 0;
+  margin-top: 10px;
+  font-family: serif;
+  font-weight: bold;
+  margin: 0 -1em;
+}
+
+.info-sentence {
+  text-align: left;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.info-logo {
+  width: 300px;
+}
+
+.info-stafftitle {
+  text-align: center;
+  background-color: #062250;
+  color: white;
+  padding: 10px;
+  font-family: serif;
+  font-weight: bold;
+}
+
+.info-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-columns: 2;
+          columns: 2;
+}
+
+.qanda {
+  text-align: center;
+}
+
+.qanda-title {
+  font-size: 3.5em;
+  font-family: serif;
+  font-weight: bold;
+  border-bottom: 1px solid #3DB1BA;
+}
+
+.qanda-title2 {
+  font-size: 2em;
+  font-family: serif;
+  font-weight: bold;
+  padding-top: 15px;
+}
+
+.qanda-contents {
+  margin: 0.5em;
+}
+
+.qanda-question {
+  background-color: #E7F4F0;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.qanda-question::before {
+  content: "Q";
+  font-size: 2.5em;
+  color: #453A33;
+  margin-right: 10px;
+  font-family: serif;
+}
+
+.qanda-answer {
+  padding: 10px;
+}
+
+.qanda-answer::before {
+  content: "A";
+  font-size: 2.5em;
+  color: #453A33;
+  margin-right: 10px;
+  font-family: serif;
+}
+
+.last {
+  background-image: url(lastimage.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
+  text-align: center;
+}
+
+.last-message {
+  margin: 10px;
+  font-size: 95%;
+  font-family: serif;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=style.css.map */

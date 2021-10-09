@@ -29,44 +29,44 @@ $breakpoint-up: (
             }
         }
         
-        html{   
-            margin: 0;
-            padding: 0;
-            font-family: ArialMT, "メイリオ", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
-            width: 100%;
-        }
+html{   
+    margin: 0;
+    padding: 0;
+    font-family: ArialMT, "メイリオ", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
+    width: 100%;
+}
+
+img{
+    max-width: 100%;
+}
+
+.header{
+    display: flex;
+}
+
+.corona{
+    background-color: #453a33;
+    text-align: center;
+    padding: 1em;
+    &-title{    
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    &-sub{
+        font-size: 15px;
+        color: white;
+    }
+    &-picture{
+        width: 300px;
+        padding-top: 10px;
+
+    }
+}
         
-        img{
-            max-width: 100%;
-        }
         
-        .header{
-            display: flex;
-        }
-        
-        .corona{
-            background-color: #453a33;
-            &-title{    
-                color: white;
-                padding: 10px;
-                text-align: center;
-                font-size: 18px;
-                font-weight: bold;
-                padding: 1em;
-            }
-            &-sub{
-                font-size: 15px;
-                text-align: center;
-                color: white;
-                padding: 1em;
-            }
-            &-picture{
-                width: 300px;
-                padding: 14px;
-            }
-        }
-        
-        .threereason{
+    .threereason{
     display: inline-block;
     text-align: center;
     p{
@@ -80,6 +80,21 @@ $breakpoint-up: (
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    $w: 90px;
+    padding-bottom: $w;
+    &::before{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-image: url(toppage-woman.png);
+        background-size: contain;
+        background-position: bottom right;
+        background-repeat: no-repeat;
+    }
     &-subtitle{
         padding: 13px;
         width: 310px;
@@ -87,9 +102,11 @@ $breakpoint-up: (
         z-index: 10;
     }
     &-title{
-        margin-top: -152px;
+        // margin-top: -157px;
         position: relative;
         z-index: 10;
+        margin-top: -35px;
+
     }
     &-info{
         width: 235px;
@@ -97,31 +114,59 @@ $breakpoint-up: (
         z-index: 9;
         margin: -14 0 0 auto;
     }
-    &-price{
-        padding-top: 58px;
+    &-bg{
+        margin-top: -$w;
         border-radius: 10em 10em 0 0/6em 6em 0 0;
-        background: #3db1ba;
-        background: linear-gradient(61deg, #3db1ba 0%, white 35%, #3db1ba 100%);
-        position: relative;
-        z-index: 7;
-        margin-top: -70px;
-    }
-    &-contact{
-        width: 350px;
-        display: flex;
-        text-align: center;
-
-    }
-    &-woman{
-        margin-top: -250px;
+        background: rgb(62,133,139);
+        background: linear-gradient(0deg, rgba(62,133,139,1) 0%, rgba(144,248,255,1) 18%, rgba(36,146,154,1) 40%, rgba(97,231,240,1) 59%, rgba(139,201,206,1) 82%, rgba(136,195,200,0.2763480392156863) 92%, rgba(136,195,200,0) 100%);
         position: relative;
         z-index: 1;
     }
+    &-content{
+        font-family: serif;
+        text-shadow: 3px 3px 3px #306e73;
+        color: white;
+        font-weight: bold;
+        line-height: 1;
+        padding: 10px;
+        margin-top: -18px;
+        &-costname{
+            font-size: 32px;
+        }
+        .cost{
+            display: flex;
+            &-name{
+                font-size: 81px;
+            }
+            &-side{
+                writing-mode: vertical-lr;
+                font-size: 23px;
+            }
+        }
+    }
+    
+    // &-woman{
+    //     margin-top: -250px;
+    //     position: relative;
+    //     z-index: 1;
+    // }
     &-shoureijisseki{
         width: 150px;
     }
     
-    
+}
+.container{
+}
+.contact{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+    &-1{
+        width: 180px;
+    }
+    &-2{
+        width: 180px;
+    }
 }
 
 .trouble{
@@ -139,19 +184,91 @@ $breakpoint-up: (
         font-weight: bold;
     }
     &-naiyou{
-        font-size: 1em;
+        font-size: 18px;
         color: white;
         font-family: serif;
+        line-height: 2;
+        margin: 10px 0 0 15px;
+        position: relative;
+        z-index: 2;
     }
     &-woman{
-        width: 11em;
+        width: 14em;
+        margin: -14em 0 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+    &-last{
+        margin-top: -5em;
+        position: relative;
+        z-index: 3;
+    }
+}
+.arrow{
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+
+    &::after{
+        content: '';
+        width: 30px;
+        height: 30px;
+        border: 0px;
+        border-top: solid 2px #5bc0de;
+        border-right: solid 2px #5bc0de;
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(135deg);
+        position: absolute;
+        top: 50%;
+        left: 180.5px;
+        margin-top: -4px;
+    }
+}
+.arrow2{
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+
+    &::after{
+        content: '';
+        width: 30px;
+        height: 30px;
+        border: 0px;
+        border-top: solid 2px #5bc0de;
+        border-right: solid 2px #5bc0de;
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(135deg);
+        position: absolute;
+        top: 60%;
+        left: 180.5px;
+        margin-top: 15px;
     }
 }
 
 .reason{
+    background-color: #FCF2F5;
+    border-radius: 3em;
+    padding: 13px;
+    margin: 40px 0 15px;
+    padding-bottom: 28px;
     &-title{
-        text-align: center;
+        margin: 17px 10px;
     }
+    &-number{
+        font-size: 5em;
+        font-family: serif;
+        color: #D92D68;
+    }
+    &-1,&-2,&-3{
+        display: flex;
+    }
+    
     &-one,&-two,&-three{
         font-size: 2em;
         font-family: serif;
@@ -161,20 +278,144 @@ $breakpoint-up: (
     &-reason1info,&-reason2info,&-reason3info{
         font-size: 14px;
         width: 100%;
+        padding: 12px 0 20px;
+        line-height: 2;
+    }
+}
+
+.jisseki{
+    background-image: url(dentalphoto.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+    &-round{
+        padding: 20px;
+        text-align: center;
     }
 }
 
 .course{
     display: inline-block;
     text-align: center;
-    font-size: 40px;
     &-title{
-        font-size: 28px;
+        background-image: url(dental-logo.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        padding: 36px 0 30px;
+    }
+    &-name{
+        font-size: 1.5em;
+        background-color: white;
+        margin-top: -10px;
+    }
+    .course1,.course2,.course3{
+        background-color: #E7F4F0;
+        margin: 10px 0 10px;
+    }
+    .title1{
+        font-size: 26px;
+    }
+    .title2{
+        font-size: 49px;
+    }
+    
+}
+.info{
+    text-align: center;
+    padding: 1em;
+    &-title{
+        font-size: 26px;
+        background-image: url(dentalphoto2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 2.9em 0;
+        margin-top: 10px;
+        font-family: serif;
+        font-weight: bold;
+        margin: 0 -1em;
+    }
+    &-sentence{
+        text-align: left;
+        margin-bottom: 10px ;
+        line-height: 1.5;
+    }
+    &-logo{
+        width: 300px;
+    }
+    &-stafftitle{
+        text-align: center;
+        background-color: #062250;
+        color: white;
+        padding: 10px;
+        font-family: serif;
+        font-weight: bold;
+    }
+    &-image{
+        display: flex;
+        columns: 2;
+
+    }
+
+
+}
+
+.qanda{
+    text-align: center;
+
+    &-title{
+        font-size: 3.5em;
+        font-family: serif;
+        font-weight: bold;
+        border-bottom: 1px solid #3DB1BA;
+
     }
     &-title2{
-        font-size: 28px;
+        font-size: 2em;
+        font-family: serif;
+        font-weight: bold;  
+        padding-top: 15px;
     }
-    &-1,&-2,&-3{
-        font-size: 14px;
+    &-contents{
+        margin: 0.5em;
     }
+    &-question{
+        background-color: #E7F4F0;
+        border-radius: 10px;
+        padding: 10px;
+        &::before{
+            content: "Q";
+            font-size: 2.5em;
+            color: #453A33;
+            margin-right: 10px;
+            font-family: serif;
+        }
+    }
+    &-answer{
+        padding: 10px;
+        &::before{
+            content: "A";
+            font-size: 2.5em;
+            color: #453A33;
+            margin-right: 10px;
+            font-family: serif;
+        }
+    }
+}
+
+.last{
+    background-image: url(lastimage.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    text-align: center;
+    &-message{
+        margin: 10px;
+        font-size: 95%;
+        font-family: serif;
+    }
+}
+
+footer{
+    display: flex;
 }

@@ -530,10 +530,15 @@ img {
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
   font-size: 23px;
+  text-align: end;
 }
 
 .eyecatch-shoureijisseki {
   width: 150px;
+}
+
+.container {
+  overflow: hidden;
 }
 
 .contact {
@@ -572,6 +577,8 @@ img {
           transform: rotate(-4deg);
   text-align: center;
   font-weight: bold;
+  border-radius: 37% 63% 53% 47% / 30% 55% 45% 70%;
+  background-color: white;
 }
 
 .trouble-naiyou {
@@ -655,7 +662,6 @@ img {
 }
 
 .reason-reason1info, .reason-reason2info, .reason-reason3info {
-  font-size: 14px;
   width: 100%;
   padding: 12px 0 20px;
   line-height: 2;
@@ -664,13 +670,12 @@ img {
 .jisseki {
   background-image: url(dentalphoto.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
-  text-align: center;
+  background-size: cover;
 }
 
 .jisseki-round {
-  padding: 20px;
   text-align: center;
+  padding: 3rem;
 }
 
 .course {
@@ -686,23 +691,86 @@ img {
   padding: 36px 0 30px;
 }
 
+.course .title1 {
+  font-size: 23px;
+  font-family: serif;
+  border-bottom: 1.5px solid #3DB1BA;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.course .title2 {
+  font-size: 45px;
+  font-family: serif;
+}
+
 .course-name {
   font-size: 1.5em;
   background-color: white;
   margin-top: -10px;
+  position: relative;
+  z-index: 2;
+  padding: 14px;
+  margin: -31px 24px 0;
+  border: 2px solid #453A33;
+  outline: 2px solid #453A33;
+  outline-offset: -8px;
+  line-height: 1.5;
+  font-family: serif;
+  font-weight: bold;
+}
+
+.course-name .sub {
+  font-size: 18px;
+}
+
+.course-number {
+  width: 160px;
+  margin-right: 80%;
+}
+
+.course-image {
+  position: relative;
+  z-index: 1;
+}
+
+.course-sentence {
+  line-height: 30px;
+  margin: 18px 0;
 }
 
 .course .course1, .course .course2, .course .course3 {
   background-color: #E7F4F0;
   margin: 10px 0 10px;
+  padding: 1rem;
 }
 
-.course .title1 {
-  font-size: 26px;
+.course-table {
+  text-align: center;
+  width: 100%;
 }
 
-.course .title2 {
-  font-size: 49px;
+.course-table th {
+  color: white;
+  background-color: #062250;
+  padding: 10px;
+  font-size: 17px;
+  text-align: center;
+}
+
+.course-table td {
+  background-color: white;
+  padding: 10px;
+  font-size: 20px;
+  font-family: serif;
+  font-weight: bold;
+  color: #D92D68;
+}
+
+.course-table span {
+  font-size: 10px;
+  margin: -3px;
 }
 
 .info {
@@ -742,11 +810,13 @@ img {
 }
 
 .info-image {
+  background-image: url(staffback.png);
+  background-repeat: no-repeat;
+  background-size: contain;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-columns: 2;
-          columns: 2;
+  margin-top: 20px;
 }
 
 .qanda {
@@ -758,6 +828,9 @@ img {
   font-family: serif;
   font-weight: bold;
   border-bottom: 1px solid #3DB1BA;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .qanda-title2 {

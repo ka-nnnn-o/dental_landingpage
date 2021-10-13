@@ -145,6 +145,7 @@ img{
             &-side{
                 writing-mode: vertical-lr;
                 font-size: 23px;
+                text-align: end;
             }
         }
     }
@@ -160,6 +161,7 @@ img{
     
 }
 .container{
+    overflow: hidden;
 }
 .contact{
     display: flex;
@@ -186,6 +188,9 @@ img{
         transform: rotate(-4deg);
         text-align: center;
         font-weight: bold;
+        border-radius: 37% 63% 53% 47% / 30% 55% 45% 70%;
+        background-color: white;
+
     }
     &-naiyou{
         font-size: 18px;
@@ -258,7 +263,7 @@ img{
     background-color: #FCF2F5;
     border-radius: 3em;
     padding: 13px;
-    margin: 40px 0 15px;
+    margin: 40px 0 15px;    
     padding-bottom: 28px;
     &-title{
         margin: 17px 10px;
@@ -279,7 +284,6 @@ img{
         
     }
     &-reason1info,&-reason2info,&-reason3info{
-        font-size: 14px;
         width: 100%;
         padding: 12px 0 20px;
         line-height: 2;
@@ -289,11 +293,10 @@ img{
 .jisseki{
     background-image: url(dentalphoto.jpg);
     background-repeat: no-repeat;
-    background-size: contain;
-    text-align: center;
+    background-size: cover;
     &-round{
-        padding: 20px;
         text-align: center;
+        padding: 3rem;
     }
 }
 
@@ -307,20 +310,78 @@ img{
         background-position: center;
         padding: 36px 0 30px;
     }
+    .title1{
+        font-size: 23px;
+        font-family: serif;
+        border-bottom: 1.5px solid #3DB1BA;
+        width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+    .title2{
+        font-size: 45px;
+        font-family: serif;
+    }
     &-name{
         font-size: 1.5em;
         background-color: white;
         margin-top: -10px;
+        position: relative;
+        z-index: 2;
+        padding: 14px;
+        margin: -31px 24px 0;
+        border: 2px solid #453A33;
+        outline: 2px solid #453A33;
+        outline-offset: -8px;
+        line-height: 1.5;
+        font-family: serif;
+        font-weight: bold;
+        .sub{
+            font-size: 18px;
+        }
+
+    }
+    &-number{
+        width: 160px;
+        margin-right: 80%
+    }
+    &-image{
+        position: relative;
+        z-index: 1;
+    }
+    &-sentence{
+        line-height: 30px;
+        margin: 18px 0;
     }
     .course1,.course2,.course3{
         background-color: #E7F4F0;
         margin: 10px 0 10px;
+        padding: 1rem;
+        
     }
-    .title1{
-        font-size: 26px;
-    }
-    .title2{
-        font-size: 49px;
+    &-table{
+        text-align: center;
+        width: 100%;
+        th{
+            color: white;
+            background-color: #062250;
+            padding: 10px;
+            font-size: 17px;
+            text-align: center;
+        }
+        td{
+            background-color: white;
+            padding: 10px;
+            font-size: 20px;
+            font-family: serif;
+            font-weight: bold;
+            color: #D92D68;
+        }
+        span{
+            font-size: 10px;
+            margin: -3px;
+        }
     }
     
 }
@@ -355,8 +416,12 @@ img{
         font-weight: bold;
     }
     &-image{
+        background-image: url(staffback.png);
+        background-repeat: no-repeat;
+        background-size: contain;
         display: flex;
-        columns: 2;
+        margin-top: 20px;
+
 
     }
 
@@ -371,6 +436,9 @@ img{
         font-family: serif;
         font-weight: bold;
         border-bottom: 1px solid #3DB1BA;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
 
     }
     &-title2{

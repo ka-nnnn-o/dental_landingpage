@@ -417,6 +417,11 @@ img {
   display: flex;
 }
 
+.container {
+  max-width: 860px;
+  margin: auto;
+}
+
 .corona {
   background-color: #453a33;
   text-align: center;
@@ -537,10 +542,6 @@ img {
   width: 150px;
 }
 
-.container {
-  overflow: hidden;
-}
-
 .contact {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -568,6 +569,7 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  overflow: hidden;
 }
 
 .trouble-title {

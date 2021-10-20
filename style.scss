@@ -43,6 +43,10 @@ img{
 .header{
     display: flex;
 }
+.container{
+    max-width: 860px;
+    margin: auto;
+}
 
 .corona{
     background-color: #453a33;
@@ -160,9 +164,6 @@ img{
     }
     
 }
-.container{
-    overflow: hidden;
-}
 .contact{
     display: flex;
     justify-content: space-around;
@@ -182,6 +183,7 @@ img{
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    overflow: hidden;
     &-title{
         font-size: 53px;
         font-family: serif;
@@ -344,7 +346,7 @@ img{
     }
     &-number{
         width: 160px;
-        margin-right: 80%
+        margin-right: 80%;
     }
     &-image{
         position: relative;

@@ -51,7 +51,7 @@ img{
 .corona{
     background-color: #453a33;
     text-align: center;
-    padding: 1em;
+    padding: 1rem;
     &-title{    
         color: white;
         padding: 10px;
@@ -84,8 +84,6 @@ img{
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    $w: 90px;
-    padding-bottom: $w;
     &::before{
         content: "";
         display: block;
@@ -96,35 +94,40 @@ img{
         right: 0;
         background-image: url(toppage-woman.png);
         background-size: contain;
-        background-position: bottom right;
+        background-position: top right;
         background-repeat: no-repeat;
     }
     &-subtitle{
         padding: 13px;
         width: 310px;
         position: relative;
-        z-index: 10;
     }
     &-title{
-        // margin-top: -157px;
         position: relative;
-        z-index: 10;
-        margin-top: -35px;
-
+        max-width: 480px;
     }
     &-info{
         width: 235px;
         position: relative;
         z-index: 9;
-        margin: -14 0 0 auto;
+        margin: -14px 0 0 auto;
+        @include mq-up(lg){
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
     }
     &-bg{
-        margin-top: -$w;
         border-radius: 10em 10em 0 0/6em 6em 0 0;
         background: rgb(62,133,139);
         background: linear-gradient(0deg, rgba(62,133,139,1) 0%, rgba(144,248,255,1) 18%, rgba(36,146,154,1) 40%, rgba(97,231,240,1) 59%, rgba(139,201,206,1) 82%, rgba(136,195,200,0.2763480392156863) 92%, rgba(136,195,200,0) 100%);
         position: relative;
         z-index: 1;
+        @include mq-up(lg){
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 3rem;
+        }
     }
     &-content{
         font-family: serif;
@@ -139,12 +142,12 @@ img{
         padding: 10px;
         margin-top: -18px;
         &-costname{
-            font-size: 32px;
+            font-size: 31px;
         }
         .cost{
             display: flex;
             &-name{
-                font-size: 81px;
+                font-size: 77px;
             }
             &-side{
                 writing-mode: vertical-lr;
@@ -177,13 +180,13 @@ img{
 }
 
 .trouble{
-    display: flex;
-    flex-wrap: wrap;
     background-image: url(trouble-background.png);
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
     overflow: hidden;
+    &-inner{
+        position: relative;
+    }
     &-title{
         font-size: 53px;
         font-family: serif;
@@ -192,7 +195,6 @@ img{
         font-weight: bold;
         border-radius: 37% 63% 53% 47% / 30% 55% 45% 70%;
         background-color: white;
-
     }
     &-naiyou{
         font-size: 18px;
@@ -204,13 +206,12 @@ img{
         z-index: 2;
     }
     &-woman{
+        position: absolute;
+        bottom: 0;
+        right: 0;
         width: 14em;
-        margin: -14em 0 0 auto;
-        position: relative;
-        z-index: 1;
     }
     &-last{
-        margin-top: -5em;
         position: relative;
         z-index: 3;
     }
@@ -220,11 +221,9 @@ img{
     height: 30px;
     border-right: solid 2px #5bc0de;
     border-bottom: solid 2px #5bc0de;
-    position: absolute;
-    bottom: -1.5rem;
-    left: calc(50% - 15px);
     z-index: 1;
     transform: rotate(45deg);
+    margin: 1rem auto;
     &::after{
         content: '';
         display: block;
@@ -270,25 +269,54 @@ img{
     &-title{
         margin: 17px 10px;
     }
-    &-number{
-        font-size: 5em;
-        font-family: serif;
-        color: #D92D68;
+    &-list{
     }
-    &-1,&-2,&-3{
-        display: flex;
-    }
-    
-    &-one,&-two,&-three{
-        font-size: 2em;
-        font-family: serif;
-        font-weight: bold;
-        
-    }
-    &-reason1info,&-reason2info,&-reason3info{
-        width: 100%;
-        padding: 12px 0 20px;
-        line-height: 2;
+    &-item{
+        &-image{
+        }
+        &-text{
+        }
+        &-title{
+            display: flex;
+            font-size: 2rem;
+            font-family: serif;
+            &:before{
+                content: "1";
+                font-size: 5rem;
+                color: #D92D68;
+                font-weight: bold;
+                line-height: 1;
+            }
+        }
+        &-desc{
+            width: 100%;
+            padding: 12px 0 20px;
+            line-height: 2;    
+        }
+        &:nth-child(1) &-title::before{
+            content: "1";
+        }
+        &:nth-child(2) &-title{
+            flex-direction: row-reverse;
+            &::before{
+                content: "2";
+            }
+        }
+        &:nth-child(3) &-title::before{
+            content: "3";
+        }
+        @include mq-up(md){
+            display: flex;
+            &-image{
+                width: 50%;
+            }
+            &:nth-child(2){
+                flex-direction: row-reverse;
+            }
+            &-text{
+                width: 50%;
+            }
+        }
     }
 }
 
@@ -316,7 +344,7 @@ img{
         font-size: 23px;
         font-family: serif;
         border-bottom: 1.5px solid #3DB1BA;
-        width: 350px;
+        width: 320px;
         margin-left: auto;
         margin-right: auto;
 
@@ -346,21 +374,20 @@ img{
     }
     &-number{
         width: 160px;
-        margin-right: 80%;
-    }
-    &-image{
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
         z-index: 1;
     }
     &-sentence{
         line-height: 30px;
         margin: 18px 0;
     }
-    .course1,.course2,.course3{
+    &-item{
         background-color: #E7F4F0;
         margin: 10px 0 10px;
         padding: 1rem;
-        
+        position: relative;
     }
     &-table{
         text-align: center;
@@ -379,10 +406,10 @@ img{
             font-family: serif;
             font-weight: bold;
             color: #D92D68;
+            white-space: nowrap;
         }
         span{
             font-size: 10px;
-            margin: -3px;
         }
     }
     
@@ -399,7 +426,7 @@ img{
         margin-top: 10px;
         font-family: serif;
         font-weight: bold;
-        margin: 0 -1em;
+        margin: 0 -1rem;
     }
     &-sentence{
         text-align: left;
@@ -409,25 +436,32 @@ img{
     &-logo{
         width: 300px;
     }
-    &-stafftitle{
-        text-align: center;
-        background-color: #062250;
-        color: white;
-        padding: 10px;
-        font-family: serif;
-        font-weight: bold;
+    &-staff{
+        &-title{
+            text-align: center;
+            background-color: #062250;
+            color: white;
+            padding: 10px;
+            font-family: serif;
+            font-weight: bold;
+        }
+        &-list{
+            background-image: url(staffback.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            &-item{
+                margin: 4px;
+                width: 100px;
+                border: 1px solid rgb(0, 255, 255);
+            }
+        }
+        &-message{
+        }
     }
-    &-image{
-        background-image: url(staffback.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        display: flex;
-        margin-top: 20px;
-
-
-    }
-
-
 }
 
 .qanda{

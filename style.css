@@ -425,7 +425,7 @@ img {
 .corona {
   background-color: #453a33;
   text-align: center;
-  padding: 1em;
+  padding: 1rem;
 }
 
 .corona-title {
@@ -459,7 +459,6 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding-bottom: 90px;
 }
 
 .eyecatch::before {
@@ -472,7 +471,7 @@ img {
   right: 0;
   background-image: url(toppage-woman.png);
   background-size: contain;
-  background-position: bottom right;
+  background-position: top right;
   background-repeat: no-repeat;
 }
 
@@ -480,30 +479,47 @@ img {
   padding: 13px;
   width: 310px;
   position: relative;
-  z-index: 10;
 }
 
 .eyecatch-title {
   position: relative;
-  z-index: 10;
-  margin-top: -35px;
+  max-width: 480px;
 }
 
 .eyecatch-info {
   width: 235px;
   position: relative;
   z-index: 9;
-  margin: -14 0 0 auto;
+  margin: -14px 0 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .eyecatch-info {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 
 .eyecatch-bg {
-  margin-top: -90px;
   border-radius: 10em 10em 0 0/6em 6em 0 0;
   background: #3e858b;
   background: -webkit-gradient(linear, left bottom, left top, from(#3e858b), color-stop(18%, #90f8ff), color-stop(40%, #24929a), color-stop(59%, #61e7f0), color-stop(82%, #8bc9ce), color-stop(92%, rgba(136, 195, 200, 0.276348)), to(rgba(136, 195, 200, 0)));
   background: linear-gradient(0deg, #3e858b 0%, #90f8ff 18%, #24929a 40%, #61e7f0 59%, #8bc9ce 82%, rgba(136, 195, 200, 0.276348) 92%, rgba(136, 195, 200, 0) 100%);
   position: relative;
   z-index: 1;
+}
+
+@media screen and (min-width: 1024px) {
+  .eyecatch-bg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    padding-top: 3rem;
+  }
 }
 
 .eyecatch-content {
@@ -517,7 +533,7 @@ img {
 }
 
 .eyecatch-content-costname {
-  font-size: 32px;
+  font-size: 31px;
 }
 
 .eyecatch-content .cost {
@@ -527,7 +543,7 @@ img {
 }
 
 .eyecatch-content .cost-name {
-  font-size: 81px;
+  font-size: 77px;
 }
 
 .eyecatch-content .cost-side {
@@ -560,16 +576,14 @@ img {
 }
 
 .trouble {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   background-image: url(trouble-background.png);
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
   overflow: hidden;
+}
+
+.trouble-inner {
+  position: relative;
 }
 
 .trouble-title {
@@ -594,14 +608,13 @@ img {
 }
 
 .trouble-woman {
+  position: absolute;
+  bottom: 0;
+  right: 0;
   width: 14em;
-  margin: -14em 0 0 auto;
-  position: relative;
-  z-index: 1;
 }
 
 .trouble-last {
-  margin-top: -5em;
   position: relative;
   z-index: 3;
 }
@@ -611,12 +624,10 @@ img {
   height: 30px;
   border-right: solid 2px #5bc0de;
   border-bottom: solid 2px #5bc0de;
-  position: absolute;
-  bottom: -1.5rem;
-  left: calc(50% - 15px);
   z-index: 1;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+  margin: 1rem auto;
 }
 
 .arrow::after {
@@ -645,28 +656,65 @@ img {
   margin: 17px 10px;
 }
 
-.reason-number {
-  font-size: 5em;
-  font-family: serif;
-  color: #D92D68;
-}
-
-.reason-1, .reason-2, .reason-3 {
+.reason-item-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.reason-one, .reason-two, .reason-three {
-  font-size: 2em;
+  font-size: 2rem;
   font-family: serif;
-  font-weight: bold;
 }
 
-.reason-reason1info, .reason-reason2info, .reason-reason3info {
+.reason-item-title:before {
+  content: "1";
+  font-size: 5rem;
+  color: #D92D68;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.reason-item-desc {
   width: 100%;
   padding: 12px 0 20px;
   line-height: 2;
+}
+
+.reason-item:nth-child(1) .reason-item-title::before {
+  content: "1";
+}
+
+.reason-item:nth-child(2) .reason-item-title {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.reason-item:nth-child(2) .reason-item-title::before {
+  content: "2";
+}
+
+.reason-item:nth-child(3) .reason-item-title::before {
+  content: "3";
+}
+
+@media screen and (min-width: 768px) {
+  .reason-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .reason-item-image {
+    width: 50%;
+  }
+  .reason-item:nth-child(2) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .reason-item-text {
+    width: 50%;
+  }
 }
 
 .jisseki {
@@ -697,7 +745,7 @@ img {
   font-size: 23px;
   font-family: serif;
   border-bottom: 1.5px solid #3DB1BA;
-  width: 350px;
+  width: 320px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -729,11 +777,9 @@ img {
 
 .course-number {
   width: 160px;
-  margin-right: 80%;
-}
-
-.course-image {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
 }
 
@@ -742,10 +788,11 @@ img {
   margin: 18px 0;
 }
 
-.course .course1, .course .course2, .course .course3 {
+.course-item {
   background-color: #E7F4F0;
   margin: 10px 0 10px;
   padding: 1rem;
+  position: relative;
 }
 
 .course-table {
@@ -768,11 +815,11 @@ img {
   font-family: serif;
   font-weight: bold;
   color: #D92D68;
+  white-space: nowrap;
 }
 
 .course-table span {
   font-size: 10px;
-  margin: -3px;
 }
 
 .info {
@@ -789,7 +836,7 @@ img {
   margin-top: 10px;
   font-family: serif;
   font-weight: bold;
-  margin: 0 -1em;
+  margin: 0 -1rem;
 }
 
 .info-sentence {
@@ -802,7 +849,7 @@ img {
   width: 300px;
 }
 
-.info-stafftitle {
+.info-staff-title {
   text-align: center;
   background-color: #062250;
   color: white;
@@ -811,14 +858,25 @@ img {
   font-weight: bold;
 }
 
-.info-image {
+.info-staff-list {
   background-image: url(staffback.png);
   background-repeat: no-repeat;
   background-size: contain;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 20px;
+}
+
+.info-staff-list-item {
+  margin: 4px;
+  width: 100px;
+  border: 1px solid cyan;
 }
 
 .qanda {

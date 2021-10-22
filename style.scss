@@ -44,7 +44,7 @@ img{
     display: flex;
 }
 .container{
-    max-width: 860px;
+    max-width: 880px;
     margin: auto;
 }
 
@@ -84,6 +84,7 @@ img{
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    height: 648px;
     &::before{
         content: "";
         display: block;
@@ -105,7 +106,17 @@ img{
     &-title{
         position: relative;
         max-width: 480px;
+        @include mq-up(md){
+            font-size: 40px;
+            font-family: serif;
+            font-weight: bold;
+            text-shadow: 0 0 6px white,0 0 6px white,0 0 6px white;
+            span{
+                font-size: 60px;
+            }
+        }
     }
+
     &-info{
         width: 235px;
         position: relative;
@@ -126,7 +137,7 @@ img{
         @include mq-up(lg){
             display: flex;
             justify-content: space-evenly;
-            padding-top: 3rem;
+            padding-top: 9rem;
         }
     }
     &-content{
@@ -156,29 +167,24 @@ img{
             }
         }
     }
-    
-    // &-woman{
-    //     margin-top: -250px;
-    //     position: relative;
-    //     z-index: 1;
-    // }
     &-shoureijisseki{
         width: 150px;
     }
-    
+    &-contact{
+        &-btn{
+            width: 230px;
+        }
+    }
 }
+        
 .contact{
     display: flex;
-    justify-content: space-around;
-    padding-bottom: 10px;
-    &-1{
-        width: 180px;
-    }
-    &-2{
-        width: 180px;
+    &-btn{
+        width: 200px;
     }
 }
-
+        
+        
 .trouble{
     background-image: url(trouble-background.png);
     background-repeat: no-repeat;
@@ -268,6 +274,9 @@ img{
     padding-bottom: 28px;
     &-title{
         margin: 17px 10px;
+        @include mq-up(md){
+            text-align: center;
+        }
     }
     &-list{
     }
@@ -275,11 +284,13 @@ img{
         &-image{
         }
         &-text{
+        
         }
         &-title{
             display: flex;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-family: serif;
+            font-weight: bold;
             &:before{
                 content: "1";
                 font-size: 5rem;
@@ -291,7 +302,9 @@ img{
         &-desc{
             width: 100%;
             padding: 12px 0 20px;
-            line-height: 2;    
+            line-height: 2;   
+            margin: 0 0 10px 15px;
+
         }
         &:nth-child(1) &-title::before{
             content: "1";
@@ -331,14 +344,22 @@ img{
 }
 
 .course{
-    display: inline-block;
     text-align: center;
+    &-container{
+        background-color: #E7F4F0;
+        margin-bottom: 50px;
+
+    }
     &-title{
         background-image: url(dental-logo.png);
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
         padding: 36px 0 30px;
+        @include mq-up(md){
+            margin: 50px 0 30px;
+        }
+
     }
     .title1{
         font-size: 23px;
@@ -347,11 +368,35 @@ img{
         width: 320px;
         margin-left: auto;
         margin-right: auto;
-
+        @include mq-up(md){
+            font-size: 40px;
+            width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
     .title2{
         font-size: 45px;
         font-family: serif;
+        @include mq-up(md){
+            font-size: 60px;
+        }
+    }
+            
+        
+    &-top{
+        padding: 3rem 0 0;
+        position: relative;
+        &-number{
+            width: 160px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        &-image{
+            width: 860px;
+        }
     }
     &-name{
         font-size: 1.5em;
@@ -367,56 +412,72 @@ img{
         line-height: 1.5;
         font-family: serif;
         font-weight: bold;
-        .sub{
+        @include mq-up(md){
+            width: 700px;
+            margin: auto;
+        }
+        &-sub{
             font-size: 18px;
         }
-
+        
     }
-    &-number{
-        width: 160px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-    }
-    &-sentence{
-        line-height: 30px;
-        margin: 18px 0;
-    }
-    &-item{
-        background-color: #E7F4F0;
-        margin: 10px 0 10px;
-        padding: 1rem;
-        position: relative;
-    }
-    &-table{
-        text-align: center;
-        width: 100%;
-        th{
-            color: white;
-            background-color: #062250;
-            padding: 10px;
-            font-size: 17px;
+    &-content{
+        @include mq-up(md){
+            display: flex;
+        }
+        &-sentence{
+            line-height: 30px;
+            margin: 13px 11px 7px;
+            @include mq-up(md){
+                width: 500px;
+            }
+        }
+        &-table{
             text-align: center;
-        }
-        td{
-            background-color: white;
-            padding: 10px;
-            font-size: 20px;
-            font-family: serif;
-            font-weight: bold;
-            color: #D92D68;
-            white-space: nowrap;
-        }
-        span{
-            font-size: 10px;
+            width: 100%;
+            padding: 0 5px 20px;
+            @include mq-up(md){
+                width: 500px;
+                padding: 20px;
+            }
+            th{
+                color: white;
+                background-color: #062250;
+                padding: 10px;
+                font-size: 17px;
+                text-align: center;
+                vertical-align: middle;
+            }
+            td{
+                background-color: white;
+                padding: 10px;
+                font-size: 20px;
+                font-family: serif;
+                font-weight: bold;
+                color: #D92D68;
+                white-space: nowrap;
+                vertical-align: middle;
+            }
+            span{
+                font-size: 10px;
+            }
+            @include mq-up(md){
+                td{
+                    font-size: 32px;
+                }
+            }
         }
     }
-    
 }
+
+    
+    
 .info{
     text-align: center;
     padding: 1em;
+    @include mq-up(md){
+        display: flex;
+    }
     &-title{
         font-size: 26px;
         background-image: url(dentalphoto2.jpg);
@@ -427,28 +488,45 @@ img{
         font-family: serif;
         font-weight: bold;
         margin: 0 -1rem;
+        @include mq-up(md){
+            width: 500px;
+            padding-top: 200px;
+        }
     }
     &-sentence{
         text-align: left;
         margin-bottom: 10px ;
         line-height: 1.5;
-    }
-    &-logo{
-        width: 300px;
-    }
-    &-staff{
-        &-title{
-            text-align: center;
-            background-color: #062250;
-            color: white;
-            padding: 10px;
-            font-family: serif;
-            font-weight: bold;
+        @include mq-up(md){
+            margin-left: 43px;
         }
+        &-logo{
+            width: 300px;
+        }
+    }
+}
+.staff{
+    background-image: url(staffback.png);
+    background-color:rgba(255,255,255,0.5);
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    &-title{
+        text-align: center;
+        background-color: #062250;
+        color: white;
+        padding: 10px;
+        font-family: serif;
+        font-weight: bold;
+        @include mq-up(md){
+            padding: 20px;
+            font-size: 30px;
+            margin-top: 40px;
+        }
+    }
+    &-info{
         &-list{
-            background-image: url(staffback.png);
-            background-repeat: no-repeat;
-            background-size: contain;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -456,17 +534,25 @@ img{
             &-item{
                 margin: 4px;
                 width: 100px;
-                border: 1px solid rgb(0, 255, 255);
+                border: 1px solid #3DB1BA;
+                @include mq-up(md){
+                    width: 150px;
+                }
             }
-        }
-        &-message{
+            &-message{
+                @include mq-up(md){
+                    width: 200px;
+                    margin: auto;
+                }
+                
+            }
         }
     }
 }
 
+
 .qanda{
     text-align: center;
-
     &-title{
         font-size: 3.5em;
         font-family: serif;
@@ -485,6 +571,12 @@ img{
     }
     &-contents{
         margin: 0.5em;
+        @include mq-up(md){
+            width: 800px;
+            margin: auto;
+            margin-top: 50px
+
+        }
     }
     &-question{
         background-color: #E7F4F0;
@@ -516,10 +608,33 @@ img{
     background-size: cover;
     padding: 10px;
     text-align: center;
+    margin-top: 50px;
     &-message{
         margin: 10px;
         font-size: 95%;
         font-family: serif;
+        @include mq-up(md){
+            font-size: 20px;
+        }
+    }
+    &-staff{
+        display: flex;
+        text-align: center;
+        margin: auto;
+        @include mq-up(md){
+            display: flex;
+            text-align: center;
+            width: 700px;
+            margin: auto;
+        }
+
+        &-item{
+            @include mq-up(md){
+                margin: 10px;
+
+            }
+
+        }
     }
 }
 

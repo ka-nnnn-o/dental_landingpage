@@ -106,13 +106,20 @@ img{
     &-title{
         position: relative;
         max-width: 480px;
+        font-size: 40px;
+        font-family: serif;
+        font-weight: bold;
+        text-shadow: 0 0 6px white,0 0 6px white,0 0 6px white;
+        span{
+            font-size: 60px;
+        }
         @include mq-up(md){
-            font-size: 40px;
+            font-size: 60px;
             font-family: serif;
             font-weight: bold;
             text-shadow: 0 0 6px white,0 0 6px white,0 0 6px white;
             span{
-                font-size: 60px;
+                font-size: 83px;
             }
         }
     }
@@ -171,6 +178,7 @@ img{
         width: 150px;
     }
     &-contact{
+        display: flex;
         &-btn{
             width: 230px;
         }
@@ -179,8 +187,8 @@ img{
         
 .contact{
     display: flex;
+
     &-btn{
-        width: 200px;
     }
 }
         
@@ -201,6 +209,8 @@ img{
         font-weight: bold;
         border-radius: 37% 63% 53% 47% / 30% 55% 45% 70%;
         background-color: white;
+        margin: 2px;
+        padding: 25px;
     }
     &-naiyou{
         font-size: 18px;
@@ -499,6 +509,9 @@ img{
         line-height: 1.5;
         @include mq-up(md){
             margin-left: 43px;
+            &-list{
+                margin: 10px 0;
+            }
         }
         &-logo{
             width: 300px;

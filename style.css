@@ -415,10 +415,16 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.header-btn {
+  width: 250px;
 }
 
 .container {
-  max-width: 880px;
+  max-width: 900px;
   margin: auto;
 }
 
@@ -459,7 +465,12 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  height: 648px;
+}
+
+@media screen and (min-width: 1024px) {
+  .eyecatch {
+    height: 734px;
+  }
 }
 
 .eyecatch::before {
@@ -476,57 +487,102 @@ img {
   background-repeat: no-repeat;
 }
 
-.eyecatch-subtitle {
+.eyecatch-inner-subtitle {
   padding: 13px;
-  width: 310px;
   position: relative;
+  font-family: serif;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 3px white,0 0 3px white,0 0 7px white;
+  line-height: 2;
 }
 
-.eyecatch-title {
+@media screen and (min-width: 1024px) {
+  .eyecatch-inner-subtitle {
+    font-size: 30px;
+  }
+}
+
+.eyecatch-inner-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 100px;
+}
+
+@media screen and (min-width: 1024px) {
+  .eyecatch-inner-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 94px;
+  }
+}
+
+.eyecatch-inner-title-title {
   position: relative;
-  max-width: 480px;
-  font-size: 40px;
+  font-size: 45px;
   font-family: serif;
   font-weight: bold;
   text-shadow: 0 0 6px white,0 0 6px white,0 0 6px white;
+  text-align: right;
+  color: #453A33;
+  float: right;
 }
 
-.eyecatch-title span {
-  font-size: 60px;
-}
-
-@media screen and (min-width: 768px) {
-  .eyecatch-title {
-    font-size: 60px;
-    font-family: serif;
-    font-weight: bold;
-    text-shadow: 0 0 6px white,0 0 6px white,0 0 6px white;
+@media screen and (min-width: 1024px) {
+  .eyecatch-inner-title-title {
+    font-size: 90px;
   }
-  .eyecatch-title span {
-    font-size: 83px;
+}
+
+.eyecatch-inner-title-title span {
+  font-size: 35px;
+}
+
+@media screen and (min-width: 1024px) {
+  .eyecatch-inner-title-title span {
+    font-size: 70px;
+  }
+}
+
+.eyecatch-inner-title-award {
+  width: 100px;
+  position: absolute;
+  top: 8rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .eyecatch-inner-title-award {
+    width: 200px;
+    margin-top: 10px;
+    position: absolute;
+    top: 12rem;
   }
 }
 
 .eyecatch-info {
-  width: 235px;
   position: relative;
   z-index: 9;
   margin: -14px 0 0 auto;
+  font-size: 10px;
+  font-family: serif;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 1024px) {
   .eyecatch-info {
     position: absolute;
-    right: 0;
-    top: 0;
+    left: 14;
+    top: 4rem;
+    font-size: 18px;
   }
 }
 
 .eyecatch-bg {
   border-radius: 10em 10em 0 0/6em 6em 0 0;
-  background: #3e858b;
-  background: -webkit-gradient(linear, left bottom, left top, from(#3e858b), color-stop(18%, #90f8ff), color-stop(40%, #24929a), color-stop(59%, #61e7f0), color-stop(82%, #8bc9ce), color-stop(92%, rgba(136, 195, 200, 0.276348)), to(rgba(136, 195, 200, 0)));
-  background: linear-gradient(0deg, #3e858b 0%, #90f8ff 18%, #24929a 40%, #61e7f0 59%, #8bc9ce 82%, rgba(136, 195, 200, 0.276348) 92%, rgba(136, 195, 200, 0) 100%);
+  background: #75f0fa;
+  background: -webkit-gradient(linear, left bottom, left top, from(#75f0fa), color-stop(22%, #a7f2f7), color-stop(40%, #75dee6), color-stop(56%, #90eaf0), color-stop(72%, rgba(97, 231, 240, 0.534051)), to(rgba(247, 247, 247, 0)));
+  background: linear-gradient(0deg, #75f0fa 0%, #a7f2f7 22%, #75dee6 40%, #90eaf0 56%, rgba(97, 231, 240, 0.534051) 72%, rgba(247, 247, 247, 0) 100%);
   position: relative;
   z-index: 1;
 }
@@ -539,44 +595,56 @@ img {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    padding-top: 9rem;
+    padding-top: 86px;
+    width: 900px;
+    position: absolute;
+    bottom: 0;
   }
 }
 
 .eyecatch-content {
+  text-align: center;
   font-family: serif;
   text-shadow: 0 0 6px rgba(48, 110, 115, 0.5), 0 0 6px rgba(48, 110, 115, 0.5), 0 0 6px rgba(48, 110, 115, 0.5), 0 0 6px rgba(48, 110, 115, 0.5), 0 0 6px rgba(48, 110, 115, 0.5);
   color: white;
   font-weight: bold;
   line-height: 1;
-  padding: 10px;
-  margin-top: -18px;
+  padding: 30px 0 10px;
 }
 
 .eyecatch-content-costname {
   font-size: 31px;
 }
 
-.eyecatch-content .cost {
+.eyecatch .cost {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
 }
 
-.eyecatch-content .cost-name {
-  font-size: 77px;
+.eyecatch .cost-name {
+  font-size: 75px;
 }
 
-.eyecatch-content .cost-side {
+@media screen and (min-width: 1024px) {
+  .eyecatch .cost-name {
+    font-size: 120px;
+    min-width: 500px;
+  }
+}
+
+.eyecatch .cost-side {
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
-  font-size: 23px;
-  text-align: end;
+  font-size: 20px;
 }
 
-.eyecatch-shoureijisseki {
-  width: 150px;
+@media screen and (min-width: 1024px) {
+  .eyecatch .cost-side {
+    font-size: 30px;
+  }
 }
 
 .eyecatch-contact {
@@ -586,13 +654,29 @@ img {
 }
 
 .eyecatch-contact-btn {
-  width: 230px;
+  margin: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  .eyecatch-contact-btn {
+    margin: 5px;
+  }
 }
 
 .contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 300px;
+  margin: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .contact {
+    width: 600px;
+    margin: auto;
+    padding-top: 10px;
+  }
 }
 
 .trouble {
@@ -607,7 +691,7 @@ img {
 }
 
 .trouble-title {
-  font-size: 53px;
+  font-size: 43px;
   font-family: serif;
   -webkit-transform: rotate(-4deg);
           transform: rotate(-4deg);
@@ -616,10 +700,20 @@ img {
   border-radius: 37% 63% 53% 47% / 30% 55% 45% 70%;
   background-color: white;
   margin: 2px;
-  padding: 25px;
+  padding: 24px;
 }
 
 .trouble-naiyou {
+  margin-left: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .trouble-naiyou {
+    margin-left: 150px;
+  }
+}
+
+.trouble-naiyou-list {
   font-size: 18px;
   color: white;
   font-family: serif;
@@ -629,11 +723,23 @@ img {
   z-index: 2;
 }
 
+@media screen and (min-width: 1024px) {
+  .trouble-naiyou {
+    font-size: 23px;
+  }
+}
+
 .trouble-woman {
   position: absolute;
   bottom: 0;
   right: 0;
   width: 14em;
+}
+
+@media screen and (min-width: 1024px) {
+  .trouble-woman {
+    width: 19rem;
+  }
 }
 
 .trouble-last {

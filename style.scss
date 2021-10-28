@@ -42,9 +42,13 @@ img{
 
 .header{
     display: flex;
+    justify-content: space-around;
+    &-btn{
+    width: 250px;
+    }
 }
 .container{
-    max-width: 880px;
+    max-width: 900px;
     margin: auto;
 }
 
@@ -84,7 +88,9 @@ img{
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 648px;
+    @include mq-up(lg){
+        height: 734px;
+    }
     &::before{
         content: "";
         display: block;
@@ -98,56 +104,95 @@ img{
         background-position: top right;
         background-repeat: no-repeat;
     }
-    &-subtitle{
-        padding: 13px;
-        width: 310px;
-        position: relative;
-    }
-    &-title{
-        position: relative;
-        max-width: 480px;
-        font-size: 40px;
-        font-family: serif;
-        font-weight: bold;
-        text-shadow: 0 0 6px white,0 0 6px white,0 0 6px white;
-        span{
-            font-size: 60px;
-        }
-        @include mq-up(md){
-            font-size: 60px;
+    &-inner{
+        &-subtitle{
+            padding: 13px;
+            position: relative;
             font-family: serif;
             font-weight: bold;
-            text-shadow: 0 0 6px white,0 0 6px white,0 0 6px white;
-            span{
-                font-size: 83px;
+            text-shadow: 0 0 3px white,
+            0 0 3px white,0 0 3px white,0 0 7px white;
+            line-height: 2;
+            @include mq-up(lg){
+                font-size: 30px;
+            }
+        }
+    
+        &-title{
+            display: flex;
+            padding-top: 100px;
+
+            @include mq-up(lg){
+                display: flex;
+                padding-top: 94px;
+            }
+            &-title{
+                position: relative;
+                font-size: 45px;
+                font-family: serif;
+                font-weight: bold;
+                text-shadow: 0 0 6px white,0 0 6px white,0 0 6px white;
+                text-align: right;
+                color: #453A33;
+                float: right;
+                @include mq-up(lg){
+                    font-size: 90px;
+
+                }
+                span{
+                    font-size: 35px;
+                    @include mq-up(lg){
+                        font-size: 70px;
+                    }
+                }
+
+            }
+            &-award{
+                width: 100px;
+                position: absolute;
+                top: 8rem;
+                @include mq-up(lg){
+                    width: 200px;
+                    margin-top: 10px;
+                    position: absolute;
+                    top: 12rem;
+
+                }
             }
         }
     }
 
     &-info{
-        width: 235px;
         position: relative;
         z-index: 9;
         margin: -14px 0 0 auto;
+        font-size: 10px;
+        font-family: serif;
+        font-weight: bold;
         @include mq-up(lg){
             position: absolute;
-            right: 0;
-            top: 0;
+            left: 14;
+            top: 4rem;
+            font-size: 18px;
         }
     }
     &-bg{
         border-radius: 10em 10em 0 0/6em 6em 0 0;
-        background: rgb(62,133,139);
-        background: linear-gradient(0deg, rgba(62,133,139,1) 0%, rgba(144,248,255,1) 18%, rgba(36,146,154,1) 40%, rgba(97,231,240,1) 59%, rgba(139,201,206,1) 82%, rgba(136,195,200,0.2763480392156863) 92%, rgba(136,195,200,0) 100%);
+        background: rgb(117,240,250);
+        background: linear-gradient(0deg, rgba(117,240,250,1) 0%, rgba(167,242,247,1) 22%, rgba(117,222,230,1) 40%, rgba(144,234,240,1) 56%, rgba(97,231,240,0.5340511204481793) 72%, rgba(247,247,247,0) 100%);
         position: relative;
         z-index: 1;
         @include mq-up(lg){
             display: flex;
             justify-content: space-evenly;
-            padding-top: 9rem;
+            padding-top: 86px;
+            width: 900px;
+            position: absolute;
+            bottom: 0;
         }
     }
     &-content{
+        text-align: center;
         font-family: serif;
         text-shadow: 0 0 6px rgba(#306e73,.5),
             0 0 6px rgba(#306e73,.5),
@@ -157,39 +202,54 @@ img{
         color: white;
         font-weight: bold;
         line-height: 1;
-        padding: 10px;
-        margin-top: -18px;
+        padding: 30px 0 10px;
         &-costname{
             font-size: 31px;
         }
-        .cost{
-            display: flex;
-            &-name{
-                font-size: 77px;
-            }
-            &-side{
-                writing-mode: vertical-lr;
-                font-size: 23px;
-                text-align: end;
+    }
+    .cost{
+        display: flex;
+        text-align: center;
+        &-name{
+            font-size: 75px; 
+            @include mq-up(lg){
+                font-size: 120px;
+                min-width: 500px;
             }
         }
-    }
-    &-shoureijisseki{
-        width: 150px;
+        &-side{
+            writing-mode: vertical-lr;
+            font-size: 20px;
+            @include mq-up(lg){
+                font-size: 30px;
+            }
+        }
     }
     &-contact{
         display: flex;
         &-btn{
-            width: 230px;
+            margin: 10px;
+            @include mq-up(lg){
+                margin: 5px;
+
+            }
         }
     }
 }
         
 .contact{
     display: flex;
+    width: 300px;
+    margin: auto;
+    @include mq-up(lg){
+        width: 600px;
+        margin: auto;
+        padding-top: 10px;
 
+    }
     &-btn{
     }
+
 }
         
         
@@ -202,7 +262,7 @@ img{
         position: relative;
     }
     &-title{
-        font-size: 53px;
+        font-size: 43px;
         font-family: serif;
         transform: rotate(-4deg);
         text-align: center;
@@ -210,22 +270,37 @@ img{
         border-radius: 37% 63% 53% 47% / 30% 55% 45% 70%;
         background-color: white;
         margin: 2px;
-        padding: 25px;
+        padding: 24px;
     }
     &-naiyou{
-        font-size: 18px;
-        color: white;
-        font-family: serif;
-        line-height: 2;
-        margin: 10px 0 0 15px;
-        position: relative;
-        z-index: 2;
+        margin-left: 20px;
+        @include mq-up(md){
+            margin-left: 150px;
+
+        }
+        &-list{
+            font-size: 18px;
+            color: white;
+            font-family: serif;
+            line-height: 2;
+            margin: 10px 0 0 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        @include mq-up(lg){
+            font-size: 23px;
+        }
     }
+    
     &-woman{
         position: absolute;
         bottom: 0;
         right: 0;
         width: 14em;
+        @include mq-up(lg){
+            width: 19rem;
+        }
     }
     &-last{
         position: relative;
@@ -252,29 +327,6 @@ img{
         box-sizing: border-box;
     }
 }
-// .arrow2{
-//     position: relative;
-//     display: inline-block;
-//     padding-left: 20px;
-//     display: flex;
-//     flex-direction: column;
-
-//     &::after{
-//         content: '';
-//         width: 30px;
-//         height: 30px;
-//         border: 0px;
-//         border-top: solid 2px #5bc0de;
-//         border-right: solid 2px #5bc0de;
-//         -ms-transform: rotate(45deg);
-//         -webkit-transform: rotate(45deg);
-//         transform: rotate(135deg);
-//         position: absolute;
-//         top: 60%;
-//         left: 180.5px;
-//         margin-top: 15px;
-//     }
-// }
 
 .reason{
     background-color: #FCF2F5;

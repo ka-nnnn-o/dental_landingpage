@@ -56,6 +56,11 @@ img{
     background-color: #453a33;
     text-align: center;
     padding: 1rem;
+    @include mq-up(lg){
+        padding: 3rem;
+        height: 300px;
+
+    }
     &-title{    
         color: white;
         padding: 10px;
@@ -63,8 +68,9 @@ img{
         font-weight: bold;
     }
     &-sub{
-        font-size: 15px;
+        font-size: 16px;
         color: white;
+        line-height: 1.4;
     }
     &-picture{
         width: 300px;
@@ -101,9 +107,19 @@ img{
         right: 0;
         background-image: url(toppage-woman.png);
         background-size: contain;
-        background-position: top right;
+        background-position: 60px 30px;
         background-repeat: no-repeat;
+        @include mq-down(lg){
+            @include mq-up(sm){
+                background-position: 180px 10px;
+                background-size: 95%;
+            }
+        }
+        @include mq-up(lg){
+            background-position: top right;
+        }
     }
+
     &-inner{
         &-subtitle{
             padding: 13px;
@@ -121,34 +137,46 @@ img{
         &-title{
             display: flex;
             padding-top: 100px;
-
+            
             @include mq-up(lg){
                 display: flex;
                 padding-top: 94px;
             }
             &-title{
                 position: relative;
-                font-size: 45px;
+                font-size: 56px;
                 font-family: serif;
                 font-weight: bold;
                 text-shadow: 0 0 6px white,0 0 6px white,0 0 6px white;
                 text-align: right;
                 color: #453A33;
-                float: right;
+                margin: 23px 0 0 45px;
+                @include mq-down(lg){
+                    @include mq-up(sm){
+                        font-size: 80px;
+                    }
+                }
                 @include mq-up(lg){
                     font-size: 90px;
-
                 }
+                        
+                       
+                    
                 span{
-                    font-size: 35px;
+                    font-size: 45px;
                     @include mq-up(lg){
                         font-size: 70px;
+                    }
+                    @include mq-down(lg){
+                        @include mq-up(sm){
+                            font-size: 60px;
+                        }
                     }
                 }
 
             }
             &-award{
-                width: 100px;
+                width: 150px;
                 position: absolute;
                 top: 8rem;
                 @include mq-up(lg){
@@ -156,24 +184,39 @@ img{
                     margin-top: 10px;
                     position: absolute;
                     top: 12rem;
-
+                }
+                @include mq-down(lg){
+                    @include mq-up(sm){
+                        width: 250px;
+                        padding-left: 20px;
+                    }
                 }
             }
         }
     }
 
+
     &-info{
         position: relative;
         z-index: 9;
         margin: -14px 0 0 auto;
-        font-size: 10px;
+        font-size: 11px;
         font-family: serif;
         font-weight: bold;
+        color: #062250;
+        text-align: center;
+        margin-top: 10px;
         @include mq-up(lg){
-            position: absolute;
-            left: 14;
-            top: 4rem;
             font-size: 18px;
+            text-align: center;
+            margin: 12px;
+        }
+        @include mq-down(lg){
+            @include mq-up(sm){
+                font-size: 20px;
+                text-align: center;
+                margin-top: 10px;
+            }
         }
     }
     &-bg{
@@ -183,7 +226,6 @@ img{
         position: relative;
         z-index: 1;
         @include mq-up(lg){
-            display: flex;
             justify-content: space-evenly;
             padding-top: 86px;
             width: 900px;
@@ -202,53 +244,88 @@ img{
         color: white;
         font-weight: bold;
         line-height: 1;
-        padding: 30px 0 10px;
-        &-costname{
-            font-size: 31px;
+        padding: 6px 0 10px;
+        @include mq-up(lg){
+            display: flex;
         }
-    }
-    .cost{
-        display: flex;
-        text-align: center;
-        &-name{
-            font-size: 75px; 
-            @include mq-up(lg){
-                font-size: 120px;
-                min-width: 500px;
+        &-costname{
+            text-align: center;
+            font-family: serif;
+            text-shadow: 0 0 6px rgba(#306e73,.5),
+                0 0 6px rgba(#306e73,.5),
+                0 0 6px rgba(#306e73,.5),
+                0 0 6px rgba(#306e73,.5),
+                0 0 6px rgba(#306e73,.5);
+            color: white;
+            font-weight: bold;
+            font-size: 31px;
+            @include mq-down(lg){
+                @include mq-up(sm){
+                    font-size: 30px;
+                }
             }
         }
-        &-side{
-            writing-mode: vertical-lr;
-            font-size: 20px;
-            @include mq-up(lg){
-                font-size: 30px;
+        &-cost{
+            display: flex;
+            justify-content: center;
+            &-name{
+                font-size: 75px;  
+                @include mq-up(lg){
+                    font-size: 110px;
+                    min-width: 500px;
+                }
+                @include mq-down(lg){
+                    @include mq-up(sm){
+                        font-size: 150px;
+                    }
+                }
+            }
+            &-side{
+                writing-mode: vertical-lr;
+                font-size: 20px;
+                @include mq-up(lg){
+                    font-size: 30px;
+                }
             }
         }
     }
     &-contact{
         display: flex;
+
         &-btn{
             margin: 10px;
             @include mq-up(lg){
                 margin: 5px;
-
+            }
+            @include mq-down(lg){
+                @include mq-up(sm){
+                    width: 300px;
+                    margin: 0 auto 30px;
+                }
             }
         }
     }
 }
+
         
 .contact{
     display: flex;
-    width: 300px;
+    width: 350px;
     margin: auto;
     @include mq-up(lg){
         width: 600px;
         margin: auto;
         padding-top: 10px;
-
+    }
+    @include mq-down(lg){
+        @include mq-up(sm){
+            width: 600px;
+        }
     }
     &-btn{
+        margin: 10px;
     }
+
 
 }
         
@@ -301,10 +378,21 @@ img{
         @include mq-up(lg){
             width: 19rem;
         }
+        @include mq-down(lg){
+            @include mq-up(sm){
+                position: absolute;
+                bottom: 0;
+                right: 100px;
+                width: 14em;
+            }
+        }
     }
     &-last{
         position: relative;
         z-index: 3;
+        width: 350px;
+        margin: auto;
+        
     }
 }
 .arrow{
@@ -350,9 +438,10 @@ img{
         }
         &-title{
             display: flex;
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-family: serif;
             font-weight: bold;
+            margin-top: 10px;
             &:before{
                 content: "1";
                 font-size: 5rem;
@@ -363,9 +452,9 @@ img{
         }
         &-desc{
             width: 100%;
-            padding: 12px 0 20px;
-            line-height: 2;   
-            margin: 0 0 10px 15px;
+            line-height: 2;
+            margin-bottom: 16px;   
+            text-align: center;
 
         }
         &:nth-child(1) &-title::before{
@@ -415,21 +504,24 @@ img{
     &-title{
         background-image: url(dental-logo.png);
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: 160px;
         background-position: center;
         padding: 36px 0 30px;
+        margin: 30px 0 15px;
         @include mq-up(md){
             margin: 50px 0 30px;
+            background-size: 190px;
         }
 
     }
     .title1{
-        font-size: 23px;
-        font-family: serif;
+        font-size: 25px;
         border-bottom: 1.5px solid #3DB1BA;
         width: 320px;
         margin-left: auto;
         margin-right: auto;
+        color: #062250;
+        padding: 10px 0;
         @include mq-up(md){
             font-size: 40px;
             width: 600px;
@@ -440,6 +532,8 @@ img{
     .title2{
         font-size: 45px;
         font-family: serif;
+        font-weight: bold;
+        color: #453A33;
         @include mq-up(md){
             font-size: 60px;
         }
@@ -450,11 +544,16 @@ img{
         padding: 3rem 0 0;
         position: relative;
         &-number{
-            width: 160px;
+            width: 180px;
             position: absolute;
             top: 0;
             left: 0;
             z-index: 1;
+            @include mq-down(lg){
+                @include mq-up(sm){
+                    width: 260px;
+                }
+            }
         }
         &-image{
             width: 860px;
@@ -489,9 +588,14 @@ img{
         }
         &-sentence{
             line-height: 30px;
-            margin: 13px 11px 7px;
+            margin: 13px 15px 7px;
             @include mq-up(md){
                 width: 500px;
+            }
+            @include mq-down(lg){
+                @include mq-up(sm){
+                    margin: 20px 5px 25px 30px;
+                }
             }
         }
         &-table{
@@ -554,6 +658,13 @@ img{
             width: 500px;
             padding-top: 200px;
         }
+        @include mq-down(lg){
+            @include mq-up(sm){
+                margin-left: 5px;
+                font-size: 24px
+            }
+        }
+        
     }
     &-sentence{
         text-align: left;
@@ -642,6 +753,12 @@ img{
             margin-top: 50px
 
         }
+        @include mq-down(lg){
+            @include mq-up(sm){
+                width: 600px;
+            }
+        }
+        
     }
     &-question{
         background-color: #E7F4F0;

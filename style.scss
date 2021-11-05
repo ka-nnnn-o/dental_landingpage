@@ -150,7 +150,7 @@ img{
                 text-shadow: 0 0 6px white,0 0 6px white,0 0 6px white;
                 text-align: right;
                 color: #453A33;
-                margin: 23px 0 0 45px;
+                margin-left: 45px;
                 @include mq-down(lg){
                     @include mq-up(sm){
                         font-size: 80px;
@@ -159,9 +159,6 @@ img{
                 @include mq-up(lg){
                     font-size: 90px;
                 }
-                        
-                       
-                    
                 span{
                     font-size: 45px;
                     @include mq-up(lg){
@@ -172,9 +169,15 @@ img{
                             font-size: 60px;
                         }
                     }
+                    @include mq-down(sm){
+                        font-size: 39px;
+                    }
                 }
-
             }
+                        
+                       
+                    
+
             &-award{
                 width: 150px;
                 position: absolute;
@@ -264,6 +267,9 @@ img{
                     font-size: 30px;
                 }
             }
+            @include mq-down(sm){
+                font-size: 27px;
+            }
         }
         &-cost{
             display: flex;
@@ -278,6 +284,9 @@ img{
                     @include mq-up(sm){
                         font-size: 150px;
                     }
+                }
+                @include mq-down(sm){
+                    font-size: 68px;
                 }
             }
             &-side{
@@ -322,6 +331,9 @@ img{
             width: 600px;
         }
     }
+    @include mq-down(sm){
+        width: 300px;
+    }
     &-btn{
         margin: 10px;
     }
@@ -348,13 +360,19 @@ img{
         background-color: white;
         margin: 2px;
         padding: 24px;
+        @include mq-down(sm){
+            font-size: 38px;
+        }
     }
     &-naiyou{
         margin-left: 20px;
         @include mq-up(md){
             margin-left: 150px;
-
         }
+        @include mq-down(sm){
+            margin-bottom: 20px;
+        }
+
         &-list{
             font-size: 18px;
             color: white;
@@ -363,6 +381,9 @@ img{
             margin: 10px 0 0 15px;
             position: relative;
             z-index: 2;
+            @include mq-down(sm){
+                font-size: 16px;
+            }
         }
 
         @include mq-up(lg){
@@ -392,6 +413,10 @@ img{
         z-index: 3;
         width: 350px;
         margin: auto;
+        @include mq-down(sm){
+            width: 300px;
+            margin: auto;
+        }
         
     }
 }
@@ -442,19 +467,28 @@ img{
             font-family: serif;
             font-weight: bold;
             margin-top: 10px;
+            @include mq-up(md){
+                padding: 0 16px;
+    
+            }
             &:before{
                 content: "1";
                 font-size: 5rem;
                 color: #D92D68;
                 font-weight: bold;
                 line-height: 1;
+                padding: 0 5px ;
             }
         }
         &-desc{
             width: 100%;
             line-height: 2;
-            margin-bottom: 16px;   
+            margin-bottom: 40px;   
             text-align: center;
+            @include mq-up(md){
+                padding: 0 16px;
+
+            }
 
         }
         &:nth-child(1) &-title::before{
@@ -528,6 +562,10 @@ img{
             margin-left: auto;
             margin-right: auto;
         }
+        @include mq-down(sm){
+            width: 290px;
+            font-size: 22px;
+        }
     }
     .title2{
         font-size: 45px;
@@ -554,6 +592,9 @@ img{
                     width: 260px;
                 }
             }
+            @include mq-up(lg){
+                width: 300px;
+            }
         }
         &-image{
             width: 860px;
@@ -562,20 +603,19 @@ img{
     &-name{
         font-size: 1.5em;
         background-color: white;
-        margin-top: -10px;
         position: relative;
         z-index: 2;
         padding: 14px;
-        margin: -31px 24px 0;
         border: 2px solid #453A33;
-        outline: 2px solid #453A33;
-        outline-offset: -8px;
+        outline: 1px solid #453A33;
+        outline-offset: -7px;
         line-height: 1.5;
         font-family: serif;
         font-weight: bold;
+        margin: -40px 10px 0;
         @include mq-up(md){
-            width: 700px;
-            margin: auto;
+            width: 500px;
+            margin: -40px auto 0;
         }
         &-sub{
             font-size: 18px;
@@ -646,6 +686,7 @@ img{
     }
     &-title{
         font-size: 26px;
+        text-shadow: 0 0 4px white,0 0 4px white,0 0 4px white;
         background-image: url(dentalphoto2.jpg);
         background-repeat: no-repeat;
         background-size: cover;
@@ -713,6 +754,9 @@ img{
                 border: 1px solid #3DB1BA;
                 @include mq-up(md){
                     width: 150px;
+                }
+                @include mq-down(sm){
+                    width: 90px;
                 }
             }
             &-message{
@@ -790,7 +834,7 @@ img{
     background-size: cover;
     padding: 10px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
     &-message{
         margin: 10px;
         font-size: 95%;

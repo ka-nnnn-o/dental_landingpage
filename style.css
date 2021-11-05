@@ -547,7 +547,7 @@ img {
   text-shadow: 0 0 6px white,0 0 6px white,0 0 6px white;
   text-align: right;
   color: #453A33;
-  margin: 23px 0 0 45px;
+  margin-left: 45px;
 }
 
 @media screen and (max-width: 1023px) and (min-width: 540px) {
@@ -575,6 +575,12 @@ img {
 @media screen and (max-width: 1023px) and (min-width: 540px) {
   .eyecatch-inner-title-title span {
     font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 539px) {
+  .eyecatch-inner-title-title span {
+    font-size: 39px;
   }
 }
 
@@ -682,6 +688,12 @@ img {
   }
 }
 
+@media screen and (max-width: 539px) {
+  .eyecatch-content-costname {
+    font-size: 27px;
+  }
+}
+
 .eyecatch-content-cost {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -705,6 +717,12 @@ img {
 @media screen and (max-width: 1023px) and (min-width: 540px) {
   .eyecatch-content-cost-name {
     font-size: 150px;
+  }
+}
+
+@media screen and (max-width: 539px) {
+  .eyecatch-content-cost-name {
+    font-size: 68px;
   }
 }
 
@@ -766,6 +784,12 @@ img {
   }
 }
 
+@media screen and (max-width: 539px) {
+  .contact {
+    width: 300px;
+  }
+}
+
 .contact-btn {
   margin: 10px;
 }
@@ -794,6 +818,12 @@ img {
   padding: 24px;
 }
 
+@media screen and (max-width: 539px) {
+  .trouble-title {
+    font-size: 38px;
+  }
+}
+
 .trouble-naiyou {
   margin-left: 20px;
 }
@@ -801,6 +831,12 @@ img {
 @media screen and (min-width: 768px) {
   .trouble-naiyou {
     margin-left: 150px;
+  }
+}
+
+@media screen and (max-width: 539px) {
+  .trouble-naiyou {
+    margin-bottom: 20px;
   }
 }
 
@@ -812,6 +848,12 @@ img {
   margin: 10px 0 0 15px;
   position: relative;
   z-index: 2;
+}
+
+@media screen and (max-width: 539px) {
+  .trouble-naiyou-list {
+    font-size: 16px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -847,6 +889,13 @@ img {
   z-index: 3;
   width: 350px;
   margin: auto;
+}
+
+@media screen and (max-width: 539px) {
+  .trouble-last {
+    width: 300px;
+    margin: auto;
+  }
 }
 
 .arrow {
@@ -902,19 +951,32 @@ img {
   margin-top: 10px;
 }
 
+@media screen and (min-width: 768px) {
+  .reason-item-title {
+    padding: 0 16px;
+  }
+}
+
 .reason-item-title:before {
   content: "1";
   font-size: 5rem;
   color: #D92D68;
   font-weight: bold;
   line-height: 1;
+  padding: 0 5px;
 }
 
 .reason-item-desc {
   width: 100%;
   line-height: 2;
-  margin-bottom: 16px;
+  margin-bottom: 40px;
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .reason-item-desc {
+    padding: 0 16px;
+  }
 }
 
 .reason-item:nth-child(1) .reason-item-title::before {
@@ -1011,6 +1073,13 @@ img {
   }
 }
 
+@media screen and (max-width: 539px) {
+  .course .title1 {
+    width: 290px;
+    font-size: 22px;
+  }
+}
+
 .course .title2 {
   font-size: 45px;
   font-family: serif;
@@ -1043,6 +1112,12 @@ img {
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .course-top-number {
+    width: 300px;
+  }
+}
+
 .course-top-image {
   width: 860px;
 }
@@ -1050,23 +1125,22 @@ img {
 .course-name {
   font-size: 1.5em;
   background-color: white;
-  margin-top: -10px;
   position: relative;
   z-index: 2;
   padding: 14px;
-  margin: -31px 24px 0;
   border: 2px solid #453A33;
-  outline: 2px solid #453A33;
-  outline-offset: -8px;
+  outline: 1px solid #453A33;
+  outline-offset: -7px;
   line-height: 1.5;
   font-family: serif;
   font-weight: bold;
+  margin: -40px 10px 0;
 }
 
 @media screen and (min-width: 768px) {
   .course-name {
-    width: 700px;
-    margin: auto;
+    width: 500px;
+    margin: -40px auto 0;
   }
 }
 
@@ -1157,6 +1231,7 @@ img {
 
 .info-title {
   font-size: 26px;
+  text-shadow: 0 0 4px white,0 0 4px white,0 0 4px white;
   background-image: url(dentalphoto2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -1250,6 +1325,12 @@ img {
   }
 }
 
+@media screen and (max-width: 539px) {
+  .staff-info-list-item {
+    width: 90px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .staff-info-list-message {
     width: 200px;
@@ -1328,7 +1409,7 @@ img {
   background-size: cover;
   padding: 10px;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .last-message {

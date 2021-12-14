@@ -1,0 +1,378 @@
+@charset "UTF-8";
+@import "reset";
+
+$breakpoint-up: (
+	'sm': 'screen and (min-width: 540px)',
+	'md': 'screen and (min-width: 768px)',
+	'lg': 'screen and (min-width: 1024px)',
+	'xl': 'screen and (min-width: 1200px)',
+) !default;
+    
+// max-width
+$breakpoint-down: (
+	'sm': 'screen and (max-width: 539px)',
+	'md': 'screen and (max-width: 767px)',
+	'lg': 'screen and (max-width: 1023px)',
+	'xl': 'screen and (max-width: 1199px)',
+) !default;
+    
+// @mixinの定義
+@mixin mq-up($breakpoint: md) {
+	@media #{map-get($breakpoint-up, $breakpoint)} {
+		@content;
+	}
+}
+
+@mixin mq-down($breakpoint: md) {
+	@media #{map-get($breakpoint-down, $breakpoint)} {
+		@content;
+	}
+}
+
+$red: #E33B0A;
+$brown: #453a33;
+$navy:#1C2975;
+$yellow: #FFEC00;
+$water:#AED9F0;
+$pink: #D92D68;
+        
+html{   
+	margin: 0;
+	padding: 0;
+	font-family: ArialMT, "メイリオ", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
+	width: 100%;
+	font-size: 16px;
+	// color: #333;
+	line-height: 1.5;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+// .text{
+// 	&-shadow{
+// 		text-shadow: 0 0 .1em white,
+// 			0 0 .1em white,
+// 			0 0 .1em white,
+// 			0 0 .1em white,
+// 			0 0 .1em white;
+// 	}
+// }
+
+.mincho{
+	font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+
+.container{
+	max-width: 960px;
+	margin: auto;
+}
+
+.cta{
+	&-btn{
+		display: inline-block;
+		// margin: 5px;
+		padding: 1rem 10px 10px 2rem;
+		background: linear-gradient(white 1px,$red 50%);
+		border: 2px solid $red;
+		border-radius: 1rem;
+		color: white;
+		text-align: left;
+		position: relative;
+		&::before{
+			content: "";
+			display: block;
+			width: 1.5rem;
+			height: 1.5rem;
+			border-radius: .75rem;
+			vertical-align: bottom;
+			background-color: white;
+			background-size: 1rem;
+			background-position: center;
+			background-repeat: no-repeat;
+			position: absolute;
+			top: 1rem;
+			left: .3rem;
+		}
+		&.tel::before{
+			background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 50"><path fill="%23E33B0A" d="M36.67,30c-3.33,3.33-3.33,6.67-6.67,6.67S23.33,33.33,20,30c-3.33-3.33-6.67-6.67-6.67-10s3.33-3.33,6.67-6.67
+			S13.33,0,10,0S0,10,0,10c0,6.67,6.85,20.18,13.33,26.67S33.33,50,40,50c0,0,10-6.67,10-10S40,26.67,36.67,30z" /></svg>');
+		}
+		&.mail::before{
+			background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 50"><path fill="%23E33B0A" d="M18.74,21.36L2.08,5.49C2.66,5.17,3.34,5,4.06,5h41.88c0.72,0,1.4,0.17,1.99,0.49L31.26,21.36l-1.99,1.89
+			l-3.37,3.21c-0.32,0.3-0.71,0.36-0.9,0.36c-0.2,0-0.57-0.04-0.9-0.36L18.74,21.36z" /><path fill="%23E33B0A" d="M16.77,23.24L0.41,38.81C0.15,38.31,0,37.73,0,37.13V8.87C0,8.4,0.09,7.95,0.26,7.53L16.77,23.24z" /><path fill="%23E33B0A" d="M31.26,25.13l16.32,15.54c-0.5,0.22-1.05,0.33-1.64,0.33H4.06c-0.59,0-1.14-0.12-1.64-0.33l16.32-15.54
+			l3.38,3.21c0.8,0.75,1.84,1.14,2.87,1.14c1.04,0,2.08-0.37,2.87-1.14L31.26,25.13z" /><path fill="%23E33B0A" d="M50,8.87v28.25c0,0.6-0.15,1.18-0.41,1.68L33.24,23.24L49.76,7.52C49.91,7.95,50,8.4,50,8.87z" /></svg>');
+		}
+		b{
+			font-size: 18px;
+		}
+		span{
+			display: block;
+			font-size: 12px;
+		}
+	}
+}
+
+.catch{
+	padding: 10px 10px 0;
+	background-image: url("background.png");
+	background-position: top left;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+	&::before{
+		content: "";
+		display: block;
+		position: absolute;
+		top: 3rem;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: url(toppage-woman.png) no-repeat;
+		background-size: contain;
+		background-position: right top;
+		z-index: 0;
+		transform: translateX(25%);
+	}
+	.container{
+		position: relative;
+		z-index: 1;
+	}
+	&-copy{
+		margin-bottom: 5em;
+		font-size: 5.5vw;
+		text-shadow: 0 0 .1em white,
+			0 0 .1em white,
+			0 0 .1em white,
+			0 0 .1em white,
+			0 0 .1em white;
+	}
+	&-title{
+		font-size: 9vw;
+		font-weight: bold;
+		color: $brown;
+		text-shadow: 2px 3px 3px white,
+			2px 3px 3px white,
+			2px 3px 3px white,
+			2px 3px 3px white,
+			2px 3px 3px white;
+		line-height: 1;
+		&_aword{
+			vertical-align: bottom;
+		}
+		b{
+			font-size: 150%;
+		}
+		span{
+			display: block;
+			font-size: 130%;
+		}
+	}
+	&-btm{
+		margin: 0 -10px;
+		padding: 3rem 10px 10px;
+		border-radius: 100% 100% 0 0/ 30% 30% 0 0;
+		background: linear-gradient(rgba(#70CED5,0),#70CED5,#70CED5,#45B0B8,#70CED5);
+		text-align: center;
+		&_plan{
+			display: inline-block;
+			margin: auto;
+			color: white;
+			text-shadow: 3px 3px 4px rgba(black,.1),
+				3px 3px 4px rgba(black,.1),
+				3px 3px 4px rgba(black,.1),
+				3px 3px 4px rgba(black,.1),
+				3px 3px 4px rgba(black,.1);
+			font-size: 7vw;
+			line-height: 1;
+			&-price{
+				display: flex;
+				font-size: 21vw;
+				span{
+					writing-mode: vertical-rl;
+					font-size: 50%;
+				}
+			}
+		}
+		hr{
+			margin: 10px 0;
+			border-top: 3px dotted white;
+			box-shadow: 0 0 30px white, 0 0 30px white, 0 0 30px white;
+		}
+		&_cta{
+			display: inline-block;
+			margin: auto;
+		}
+	}
+}
+.corona{
+	padding: 20px 10px;
+	background: $brown;
+	color: white;
+	text-align: center;
+	h2{
+		font-weight: bold;
+		margin-bottom: 1em;
+		font-size: 1.25rem;
+	}
+	p{
+		margin-bottom: 1rem;
+	}
+	&-icons{
+		display: flex;
+		justify-content: space-between;
+		svg{
+			max-width: calc(100% / 3 - 10px);
+		}
+		.st0{fill:#FFFFFF;}
+	}
+}
+.trouble{
+	padding: 10px 0;
+	overflow: hidden;
+	background: url(trouble-background.png) no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	&::before{
+		content: "";
+		display: block;
+		background: url(trouble-woman.png) no-repeat;
+		background-size: contain;
+		background-position: right bottom;
+		position: absolute;
+		top: 0;
+		left: 40%;
+		bottom: 0;
+		right: 0;
+	}
+	&-inner{
+		position: relative;
+		z-index: 1;
+	}
+	&-title{
+		font-size: 11vw;
+		color: $navy;
+		line-height: 1.3;
+		text-align: center;
+		transform: rotate(-3deg);
+		font-weight: bold;
+		span{
+			background: linear-gradient(rgba($yellow,0) .3em,$yellow .3em);
+		}
+	}
+	&-list{
+		padding: 1rem;
+	}
+	&-item{
+		margin-bottom: 1rem;
+		color: white;
+		font-size: 1.25rem;
+		font-weight: bold;
+		span{
+			color:$water;
+		}
+	}
+	p{
+		color: $navy;
+		font-size: 7vw;
+		text-align: center;
+		line-height: 1;
+	}
+	em{
+		display: block;
+		color: #3DB1BA;
+		font-weight: bold;
+		text-shadow: 2px 2px 3px white,
+			2px 2px 3px white,
+			2px 2px 3px white,
+			2px 2px 3px white,
+			2px 2px 3px white;
+	}
+}
+.arrow{
+	width: fit-content;
+	margin: auto;
+	&::before,
+	&::after{
+		content: "";
+		display: block;
+		width: 2rem;
+		height: 2rem;
+		transform: rotate(45deg);
+		border: 0 solid silver;
+	}
+	&::before{
+		border-bottom-width: 1px;
+		border-right-width: 1px;
+	}
+	&::after{
+		border-bottom-width: 1px;
+		border-right-width: 1px;
+		position: relative;
+		top: -1rem;
+	}
+}
+.reason{
+	background-color: #FCF2F5;
+	&-title{
+		width: fit-content;
+		margin: auto;
+		padding: 10px 2rem 2rem;
+		$size: 6;
+		font-size: #{$size}vw;
+		line-height: 1.2;
+		padding-left: #{$size*3}vw;
+		text-align: right;
+		b{
+			display: block;
+			text-align: left;
+			font-size: #{$size*3}vw;
+			text-indent: -#{$size*3.25}vw;
+		}
+		i{
+			color: $pink;
+			font-size: #{$size*5}vw;
+			line-height: 1rem;
+		}
+	}
+	&-item{
+		&_title{
+			display: flex;
+			align-items: center;
+			margin-top: -1.3em;
+			text-shadow: 1px 1px 6px rgba(white,.8),
+				1px 1px 6px rgba(white,.8),
+				1px 1px 6px rgba(white,.8),
+				1px 1px 6px rgba(white,.8);
+			line-height: 1.3;
+			font-size: 8vw;
+			&::before{
+				display: inline-block;
+				color: $pink;
+				float: left;
+				font-size: 360%;
+				line-height: 1;
+				padding: 0 4px;
+			}
+		}
+		&:nth-child(1) .reason-item_title::before{
+			content: "1";
+		}
+		&:nth-child(2) .reason-item_title{
+			flex-direction: row-reverse;
+			text-align: right;
+			&::before{
+				content: "2";
+			}
+		}
+		&:nth-child(3) .reason-item_title::before{
+			content: "3";
+		}
+		&_desc{
+			padding: 0 1rem 1rem;
+		}
+	}
+}

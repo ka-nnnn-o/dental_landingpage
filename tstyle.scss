@@ -35,6 +35,15 @@ $navy:#1C2975;
 $yellow: #FFEC00;
 $water:#AED9F0;
 $pink: #D92D68;
+$green: #45B0B8;
+$bggreen: #E7F4F0;
+$lg: 880px;
+$md: 640px;
+
+@font-face {
+	font-family: 'Pinyon';
+	src: url(PinyonScript-Regular.ttf);
+}
         
 html{   
 	margin: 0;
@@ -43,7 +52,11 @@ html{
 	width: 100%;
 	font-size: 16px;
 	// color: #333;
+	color: $brown;
 	line-height: 1.5;
+	@include mq-up(md){
+		font-size: 18px;
+	}
 }
 
 img{
@@ -66,15 +79,69 @@ img{
 }
 
 .container{
-	max-width: 960px;
+	max-width: $lg;
 	margin: auto;
 }
 
+.logo{
+	display: block;
+	color: $navy;
+	line-height: 1;
+	font-size: 16px;
+	padding: .4em;
+	padding-left: 2.5em;
+	height: 2.5em;
+	letter-spacing: -1px;
+	position: relative;
+	b{
+		display: block;
+		// font-size: 75%;
+	}
+	&::before{
+		content: "";
+		display: block;
+		height: 2.5em;
+		width: 2.5em;
+		background: url(logo.png) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+.header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: auto;
+	padding: 5px 3px;
+	max-width: $lg;
+	&-tel{
+		display: block;
+		color: $navy;
+		line-height: 1.1;
+		position: relative;
+		b{
+			display: inline-block;
+			font-size: 1.2rem;
+			padding-left: 1.2em;
+			background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 50"><path fill="%232AA73B" d="M0,8.6v5.1c3.9,0,7.6,0.8,10.8,2c0.6,0.2,1.2,0.5,1.7,0.8c1.3-0.6,2.6-1.1,4.1-1.6c2.6-0.8,5.4-1.2,8.5-1.2 c4,0,7.6,0.8,10.8,2c0.6,0.2,1.2,0.5,1.7,0.8c1.3-0.6,2.6-1.1,4.1-1.6c2.6-0.8,5.4-1.2,8.4-1.2V8.6H0z" /><path fill="%232AA73B" d="M31.3,28c0,1.3,0.4,2.5,1.1,3.5c0.7,1,1.6,1.8,2.7,2.3c0.7,0.3,1.6,0.5,2.4,0.5c1.3,0,2.5-0.4,3.5-1.1 c1-0.7,1.8-1.6,2.3-2.7c0.3-0.7,0.5-1.6,0.5-2.4c0-0.6-0.1-1.3-0.4-2c-0.3-0.7-0.7-1.4-1.2-2.1c-1.1-1.4-2.6-2.7-4.6-3.8 C36,21,34.7,22,33.8,23c-1,1.1-1.8,2.2-2.1,3.3C31.4,26.9,31.3,27.4,31.3,28z" /><path fill="%232AA73B" d="M43.6,20.8c1.3,1.4,2.3,2.8,2.9,4.4C46.8,26.1,47,27,47,28c0,1.9-0.6,3.8-1.6,5.3c-1,1.5-2.5,2.7-4.2,3.4 c-1.1,0.5-2.4,0.7-3.7,0.7c-1.9,0-3.8-0.6-5.3-1.6c-1.5-1-2.7-2.5-3.4-4.2c-0.5-1.1-0.7-2.4-0.7-3.7c0-1.4,0.4-2.8,1.1-4.1 c0.7-1.3,1.7-2.5,2.9-3.7c0.6-0.6,1.3-1.1,2-1.7c-0.5-0.2-1-0.4-1.5-0.5c-2.3-0.7-4.8-1.1-7.5-1.1c-3.3,0-6.4,0.6-9.1,1.6 c1,0.7,1.9,1.4,2.6,2.2c1.3,1.4,2.3,2.8,2.9,4.4c0.3,0.9,0.5,1.8,0.5,2.8c0,1.9-0.6,3.8-1.6,5.3c-1,1.5-2.5,2.7-4.2,3.4 c-1.1,0.5-2.4,0.7-3.7,0.7c-1.9,0-3.8-0.6-5.3-1.6c-1.5-1-2.7-2.5-3.4-4.2C3.3,30.5,3,29.3,3,28c0-1.4,0.4-2.8,1.1-4.1 c0.7-1.3,1.7-2.5,2.9-3.7c0.6-0.6,1.3-1.1,2-1.7c-0.5-0.2-1-0.4-1.5-0.5c-2.3-0.7-4.8-1.1-7.5-1.1v24.5h50V16.9 c-3.3,0-6.4,0.6-9,1.6C42,19.2,42.8,20,43.6,20.8z" /><path fill="%232AA73B" d="M6.3,28c0,1.3,0.4,2.5,1.1,3.5c0.7,1,1.6,1.8,2.7,2.3c0.7,0.3,1.6,0.5,2.4,0.5c1.3,0,2.5-0.4,3.5-1.1 c1-0.7,1.8-1.6,2.3-2.7c0.3-0.7,0.5-1.6,0.5-2.4c0-0.6-0.1-1.3-0.4-2c-0.3-0.7-0.7-1.4-1.2-2.1c-1.1-1.4-2.6-2.7-4.6-3.8 C11,21,9.7,22,8.7,23c-1,1.1-1.8,2.2-2.1,3.3C6.4,26.9,6.3,27.4,6.3,28z" /></svg>') no-repeat left;
+		}
+		span{
+			display: block;
+			font-size: 11px;
+		}
+	}
+}
+
 .cta{
+	margin: 2rem auto;
+	text-align: center;
 	&-btn{
 		display: inline-block;
 		// margin: 5px;
-		padding: 1rem 10px 10px 2rem;
+		padding: 1rem 10px 10px;
 		background: linear-gradient(white 1px,$red 50%);
 		border: 2px solid $red;
 		border-radius: 1rem;
@@ -84,6 +151,8 @@ img{
 		&::before{
 			content: "";
 			display: block;
+			margin-left: -5px;
+			margin-right: 3px;
 			width: 1.5rem;
 			height: 1.5rem;
 			border-radius: .75rem;
@@ -92,9 +161,10 @@ img{
 			background-size: 1rem;
 			background-position: center;
 			background-repeat: no-repeat;
-			position: absolute;
-			top: 1rem;
-			left: .3rem;
+			// position: absolute;
+			// top: 1rem;
+			// left: .3rem;
+			float: left;
 		}
 		&.tel::before{
 			background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 50"><path fill="%23E33B0A" d="M36.67,30c-3.33,3.33-3.33,6.67-6.67,6.67S23.33,33.33,20,30c-3.33-3.33-6.67-6.67-6.67-10s3.33-3.33,6.67-6.67
@@ -106,11 +176,12 @@ img{
 			l3.38,3.21c0.8,0.75,1.84,1.14,2.87,1.14c1.04,0,2.08-0.37,2.87-1.14L31.26,25.13z" /><path fill="%23E33B0A" d="M50,8.87v28.25c0,0.6-0.15,1.18-0.41,1.68L33.24,23.24L49.76,7.52C49.91,7.95,50,8.4,50,8.87z" /></svg>');
 		}
 		b{
-			font-size: 18px;
+			font-size: 17px;
 		}
 		span{
 			display: block;
 			font-size: 12px;
+			clear: both;
 		}
 	}
 }
@@ -122,43 +193,42 @@ img{
 	background-size: cover;
 	position: relative;
 	overflow: hidden;
-	&::before{
-		content: "";
-		display: block;
-		position: absolute;
-		top: 3rem;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		background: url(toppage-woman.png) no-repeat;
-		background-size: contain;
-		background-position: right top;
-		z-index: 0;
-		transform: translateX(25%);
-	}
 	.container{
 		position: relative;
 		z-index: 1;
+		&::before{
+			content: "";
+			display: block;
+			position: absolute;
+			top: 3rem;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background: url(toppage-woman.png) no-repeat;
+			background-size: contain;
+			background-position: right top;
+			z-index: -1;
+			transform: translateX(25%);
+		}
 	}
 	&-copy{
 		margin-bottom: 5em;
-		font-size: 5.5vw;
 		text-shadow: 0 0 .1em white,
-			0 0 .1em white,
-			0 0 .1em white,
-			0 0 .1em white,
-			0 0 .1em white;
+		0 0 .1em white,
+		0 0 .1em white,
+		0 0 .1em white,
+		0 0 .1em white;
+		font-size: 5.5vw;
 	}
 	&-title{
-		font-size: 9vw;
 		font-weight: bold;
-		color: $brown;
 		text-shadow: 2px 3px 3px white,
-			2px 3px 3px white,
-			2px 3px 3px white,
-			2px 3px 3px white,
-			2px 3px 3px white;
+		2px 3px 3px white,
+		2px 3px 3px white,
+		2px 3px 3px white,
+		2px 3px 3px white;
 		line-height: 1;
+		font-size: 9vw;
 		&_aword{
 			vertical-align: bottom;
 		}
@@ -171,25 +241,30 @@ img{
 		}
 	}
 	&-btm{
-		margin: 0 -10px;
 		padding: 3rem 10px 10px;
 		border-radius: 100% 100% 0 0/ 30% 30% 0 0;
-		background: linear-gradient(rgba(#70CED5,0),#70CED5,#70CED5,#45B0B8,#70CED5);
+		background: linear-gradient(rgba(#70CED5,0),#70CED5,#70CED5,$green,#70CED5);
 		text-align: center;
+		width: 100vw;
+		margin: 0 calc(50% - 50vw);
+		@media screen and (min-width:$lg) {
+			max-width: 100%;
+			margin: auto;
+		}
 		&_plan{
 			display: inline-block;
 			margin: auto;
 			color: white;
 			text-shadow: 3px 3px 4px rgba(black,.1),
-				3px 3px 4px rgba(black,.1),
-				3px 3px 4px rgba(black,.1),
-				3px 3px 4px rgba(black,.1),
-				3px 3px 4px rgba(black,.1);
+			3px 3px 4px rgba(black,.1),
+			3px 3px 4px rgba(black,.1),
+			3px 3px 4px rgba(black,.1),
+			3px 3px 4px rgba(black,.1);
 			font-size: 7vw;
 			line-height: 1;
 			&-price{
 				display: flex;
-				font-size: 21vw;
+				font-size: 300%;
 				span{
 					writing-mode: vertical-rl;
 					font-size: 50%;
@@ -203,7 +278,31 @@ img{
 		}
 		&_cta{
 			display: inline-block;
-			margin: auto;
+			margin: 1rem -10px;
+		}
+	}
+	@include mq-up(md){
+		.container::before{
+			transform: translateX(20%);
+		}
+		&-copy{
+			font-size: 1.5rem;
+		}
+		&-title{
+			font-size: 3.5rem;
+		}
+		&-btm{
+			&_inner{
+				display: flex;
+				justify-content: space-evenly;
+			}
+			&_plan{
+				margin: 0;
+				font-size: 1.5rem;
+			}
+			&_cta{
+				margin: 1rem 0;
+			}
 		}
 	}
 }
@@ -223,6 +322,8 @@ img{
 	&-icons{
 		display: flex;
 		justify-content: space-between;
+		max-width: 320px;
+		margin: auto;
 		svg{
 			max-width: calc(100% / 3 - 10px);
 		}
@@ -230,41 +331,49 @@ img{
 	}
 }
 .trouble{
-	padding: 10px 0;
 	overflow: hidden;
 	background: url(trouble-background.png) no-repeat;
 	background-size: cover;
 	background-position: center;
 	position: relative;
-	&::before{
-		content: "";
-		display: block;
-		background: url(trouble-woman.png) no-repeat;
-		background-size: contain;
-		background-position: right bottom;
-		position: absolute;
-		top: 0;
-		left: 40%;
-		bottom: 0;
-		right: 0;
-	}
 	&-inner{
+		padding: 0 0 10px;
 		position: relative;
 		z-index: 1;
+		&::after{
+			content: "";
+			display: block;
+			background: url(trouble-woman.png) no-repeat right bottom;
+			background-size: contain;
+			position: absolute;
+			top: 13em;
+			left: 40%;
+			bottom: 0;
+			right: 0;
+			z-index: -1;
+		}
 	}
 	&-title{
-		font-size: 11vw;
 		color: $navy;
 		line-height: 1.3;
 		text-align: center;
-		transform: rotate(-3deg);
 		font-weight: bold;
+		background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 932 166"><path fill="%23FFFFFF" d="M3 0h923s17 32-9 60-236 47-290 81-147 23-147 23 64-9 62-23-98-14-98-14-277 6-372-35S3 0 3 0Z" /></svg>') no-repeat bottom center;
+		padding: .5em 0 1em;
+		background-size: cover;
+		font-size: 11vw;
 		span{
+			display: block;
+			transform: rotate(-3deg);
+		}
+		b{
 			background: linear-gradient(rgba($yellow,0) .3em,$yellow .3em);
 		}
 	}
 	&-list{
 		padding: 1rem;
+		max-width: $md;
+		margin: auto;
 	}
 	&-item{
 		margin-bottom: 1rem;
@@ -277,19 +386,31 @@ img{
 	}
 	p{
 		color: $navy;
-		font-size: 7vw;
 		text-align: center;
 		line-height: 1;
+		font-size: 7vw;
+	}
+	@include mq-up(md){
+		&-inner::after{
+			top: 5em;
+		}
+		&-title{
+			font-size: 2rem;
+			padding: .5em 0 2em;
+		}
+		p{
+			font-size: 2rem;
+		}
 	}
 	em{
 		display: block;
 		color: #3DB1BA;
 		font-weight: bold;
 		text-shadow: 2px 2px 3px white,
-			2px 2px 3px white,
-			2px 2px 3px white,
-			2px 2px 3px white,
-			2px 2px 3px white;
+		2px 2px 3px white,
+		2px 2px 3px white,
+		2px 2px 3px white,
+		2px 2px 3px white;
 	}
 }
 .arrow{
@@ -321,34 +442,56 @@ img{
 		width: fit-content;
 		margin: auto;
 		padding: 10px 2rem 2rem;
-		$size: 6;
-		font-size: #{$size}vw;
 		line-height: 1.2;
-		padding-left: #{$size*3}vw;
 		text-align: right;
+		position: relative;
+		z-index: 1;
+		$size: 5;
+		font-size: #{$size}vw;
+		padding-left: 3em;
+		max-width: $md;
 		b{
 			display: block;
 			text-align: left;
-			font-size: #{$size*3}vw;
-			text-indent: -#{$size*3.25}vw;
+			font-size: 290%;
+			text-indent: -1em;
 		}
 		i{
 			color: $pink;
-			font-size: #{$size*5}vw;
 			line-height: 1rem;
+			font-size: 160%;
+		}
+		@include mq-up(md){
+			font-size: 2rem;
+		}
+		&::after{
+			content: "";
+			display: block;
+			background: url(reason-ribbon.png) no-repeat right bottom;
+			background-size: contain;
+			width: 80%;
+			height: 80%;
+			position: absolute;
+			bottom: 8px;
+			right: 8px;
+			z-index: -1;
 		}
 	}
 	&-item{
 		&_title{
 			display: flex;
 			align-items: center;
-			margin-top: -1.3em;
 			text-shadow: 1px 1px 6px rgba(white,.8),
-				1px 1px 6px rgba(white,.8),
-				1px 1px 6px rgba(white,.8),
-				1px 1px 6px rgba(white,.8);
+			1px 1px 6px rgba(white,.8),
+			1px 1px 6px rgba(white,.8),
+			1px 1px 6px rgba(white,.8);
 			line-height: 1.3;
+			margin-top: -1.3em;
 			font-size: 8vw;
+			@include mq-up(md){
+				margin-top: 0;
+				font-size: 1.75rem;
+			}
 			&::before{
 				display: inline-block;
 				color: $pink;
@@ -358,14 +501,34 @@ img{
 				padding: 0 4px;
 			}
 		}
+		@include mq-up(md){
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 1rem;
+			&_text{
+				width: 50%;
+			}
+			&_image{
+				width: calc(50% - 1rem);
+				img{
+					object-fit: cover;
+					height: 100%;
+				}
+			}
+		}
 		&:nth-child(1) .reason-item_title::before{
 			content: "1";
 		}
-		&:nth-child(2) .reason-item_title{
-			flex-direction: row-reverse;
-			text-align: right;
-			&::before{
-				content: "2";
+		&:nth-child(2){
+			.reason-item_title{
+				flex-direction: row-reverse;
+				text-align: right;
+				&::before{
+					content: "2";
+				}
+			}
+			@include mq-up(md){
+				flex-direction: row-reverse;
 			}
 		}
 		&:nth-child(3) .reason-item_title::before{
@@ -374,5 +537,373 @@ img{
 		&_desc{
 			padding: 0 1rem 1rem;
 		}
+	}
+}
+.jisseki{
+	background-image: url(dentalphoto.jpg);
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+	padding: 3rem 0;
+}
+.course{
+	&-title{
+		margin: 1rem auto;
+		max-width: $md;
+		padding: 1rem;
+		text-align: center;
+		background: url(dental-logo.png) no-repeat center;
+		background-size: contain;
+		font-size: 6vw;
+		span{
+			display: block;
+			padding-bottom: 8px;
+			border-bottom: 1px solid $green;
+			color: $navy;
+		}
+		.mincho{
+			font-size: 153%;
+		}
+		@include mq-up(md){
+			font-size: 2rem;
+		}
+	}
+	&-item{
+		margin-bottom: 3rem;
+		padding: 2rem 1rem 1rem;
+		background-color: $bggreen;
+		position: relative;
+		&::before{
+			font-family: "Pinyon";
+			transform: rotate(-8deg);
+			position: absolute;
+			top: -1rem;
+			left: 0;
+			color: $pink;
+			font-size: 4rem;
+		}
+		&:first-child::before{
+			content: "Course1";
+		}
+		&:nth-child(2)::before{
+			content: "Course2";
+		}
+		&:nth-child(3)::before{
+			content: "Course3";
+		}
+		&_thumb{
+			margin: 0 -1rem;
+			@include mq-up(md){
+				img{
+					width: 100%;
+					height: 240px;
+					object-fit: cover;
+				}
+			}
+		}
+		&_title{
+			margin: -3rem auto 1rem;
+			padding: 20px 10px;
+			border: 2px solid $brown;
+			text-align: center;
+			position: relative;
+			background-color: white;
+			font-weight: bold;
+			max-width: $md;
+			font-size: 7vw;
+			b{
+				display: block;
+				font-size: 130%;
+			}
+			&::before{
+				content: "";
+				display: block;
+				border: inherit;
+				border-width: 1px;
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				bottom: 5px;
+				right: 5px;
+			}
+		}
+		@media screen and (min-width: $lg) {
+			padding: 2rem calc(50% - #{$lg/2}) 1rem;
+			&::before{
+				left: calc(50% - #{$lg/2} - 1rem);
+			}
+			&_title{
+				font-size: 1.25rem;
+			}
+		}
+		&_bottom{
+			&-price{
+				dl{
+					border-collapse: collapse;
+					width: 100%;
+					@include mq-down(md){
+						margin-top: 1rem;
+					}
+				}
+				dt,dd{
+					padding: 10px 8px;
+				}
+				dt{
+					background-color: $navy;
+					color: white;
+					text-align: center;
+				}
+				dd{
+					background-color: white;
+					color: $pink;
+					text-align: right;
+					line-height: 1;
+					margin-bottom: 5px;
+				}
+				b{
+					font-size: 1.25rem;
+				}
+			}
+			&-cap{
+				font-size: 12px;
+				text-align: right;
+			}
+			@include mq-up(md){
+				display: flex;
+				justify-content: space-between;
+				&-desc{
+					width: 50%;
+				}
+				&-price{
+					width: calc(50% - 1rem);
+				}
+			}
+		}
+	}
+}
+.info{
+	margin-top: 2rem;
+	&-title{
+		padding: 2em 0;
+		background: url(dentalphoto2.jpg) no-repeat center;
+		background-size: cover;
+		text-align: center;
+		font-weight: bold;
+		text-shadow: 0 0 3px white,
+		0 0 3px white,
+		0 0 6px white,
+		0 0 6px white;
+		font-size: 7vw;
+	}
+	&-inner{
+		padding: 1rem;
+	}
+	@include mq-up(md){
+		display: flex;
+		margin-bottom: 2rem;
+		&-title{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 1rem;
+			width: 50%;
+			font-size: 1.5rem;
+		}
+		&-inner{
+			width: 50%;
+			padding: 0 0 0 1rem;
+		}
+	}
+}
+
+.staff{
+	background: url(staffback.png) no-repeat center;
+	background-size: cover;
+	&-inner{
+		margin: auto;
+		max-width: $md;
+	}
+	&-title{
+		background-color: $navy;
+		color: white;
+		text-align: center;
+		padding: 8px;
+		font-size: 5vw;
+		@include mq-up(md){
+			font-size: 1.5rem;
+		}
+	}
+	&-list{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	&-item{
+		margin: 1.5%;
+		width: 30%;
+		border: 1px solid $green;
+	}
+	&-message{
+		max-width: calc(100% - 1rem);
+		padding: 2rem 1rem;
+		margin: 3rem auto 2rem;
+		border-radius: 1rem;
+		background-color: rgba(#f2f2f2,.7);
+		position: relative;
+		text-align: center;
+		&::before{
+			content: "Message";
+			display: block;
+			color: gray;
+			transform: rotate(-10deg);
+			font-family: "Pinyon";
+			font-size: 3rem;
+			position: absolute;
+			top: -2.5rem;
+			left: 0;
+		}
+		&::after{
+			content: "";
+			display: block;
+			border-bottom: 2.5rem solid rgba(#f2f2f2,.7);
+			border-left: 1rem solid transparent;
+			border-right: 1rem solid transparent;
+			position: absolute;
+			top: -2.5rem;
+			right: 2rem;
+		}
+	}
+}
+.faq{
+	margin: auto;
+	padding: 10px;
+	max-width: $md;
+	&-title{
+		font-weight: bold;
+		text-align: center;
+		font-size: 11vw;
+		b{
+			font-size: 164%;
+		}
+		span{
+			display: block;
+			height: 1px;
+			background-color: $green;
+			position: relative;
+			&::before,
+			&::after{
+				content: "";
+				display: block;
+				width: 10px;
+				height: 10px;
+				border-radius: 5px;
+				background-color: $green;
+				position: absolute;
+				top: -4px;
+			}
+			&::before{
+				left: 0;
+			}
+			&::after{
+				right: 0;
+			}
+		}
+		@include mq-up(md){
+			font-size: 2rem;
+		}
+	}
+	&-q,
+	&-a{
+		padding: 10px;
+		font-weight: normal;
+		&::before{
+			content: "A";
+			font-family: serif;
+			display: inline-block;
+			width: 3rem;
+			vertical-align: bottom;
+			font-size: 2.5rem;
+			line-height: 1;
+			text-align: center;
+		}
+	}
+	&-q{
+		margin-top: 1rem;
+		background-color: $bggreen;
+		border-radius: 10px;
+		&::before{
+			content: "Q";
+		}
+	}
+}
+.footer{
+	padding: 1rem;
+	background: url(lastimage.jpeg) no-repeat center;
+	background-size: cover;
+	&-inner{
+		max-width: $md;
+		margin: auto;
+	}
+	&-message{
+		text-align: center;
+		color: $navy;
+		font-size: 1.25rem;
+	}
+}
+small{
+	display: block;
+	background-color: $navy;
+	color: white;
+	text-align: center;
+}
+.wpcf7{
+	font-size: 14px;
+	&-text,
+	&-date,
+	&-textarea,
+	&-list-item,
+	&-select{
+		padding: 4px;
+		background-color: rgba(white,.6);
+		font-size: 18px;
+		max-width: 100%;
+		&:focus{
+			outline-color: $green;
+		}
+	}
+	&-date{
+		&::-webkit-calendar-picker-indicator{
+			display: none;
+		}
+	}
+	&-list{
+		&-item{
+			display: block;
+			width: fit-content;
+			margin-bottom: 5px;
+			font-size: 1rem;
+		}
+	}
+	dt{
+		&.must{
+			&::after{
+				content: "必須";
+				color: red;
+				font-size: 10px;
+			}
+		}
+	}
+	dd{
+		margin-bottom: 10px;
+	}
+	[type="submit"]{
+		display: block;
+		margin: 0 auto 3rem;
+		background: linear-gradient(white 1px,$red 50%);
+		color: white;
+		padding: 10px 1em;
+		border: 2px solid $red;
+		border-radius: 10px;
+		font-size: 18px;
 	}
 }

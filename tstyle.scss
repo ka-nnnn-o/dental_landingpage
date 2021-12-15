@@ -267,7 +267,7 @@ img{
 				font-size: 300%;
 				span{
 					writing-mode: vertical-rl;
-					font-size: 50%;
+					font-size: 40%;
 				}
 			}
 		}
@@ -737,11 +737,15 @@ img{
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		padding-top: .5rem;
 	}
 	&-item{
-		margin: 1.5%;
-		width: 30%;
+		margin: .5rem;
+		width: calc(50% - 2rem);
 		border: 1px solid $green;
+		@include mq-up(sm){
+			width: calc(25% - 1rem);
+		}
 	}
 	&-message{
 		max-width: calc(100% - 1rem);
